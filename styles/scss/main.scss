@@ -1,0 +1,45 @@
+@use 'partials/variables';
+@use 'partials/mixins';
+
+
+$color_fueraContent : black;
+
+body {
+    background-image: url("../img/fondo.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+header {
+    background-color: $color_fueraContent;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        border-radius: 10px;
+    }
+
+
+
+    ul {
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+
+
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+
+
+    }
+}
