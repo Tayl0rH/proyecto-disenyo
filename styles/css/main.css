@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Oswald", sans-serif; }
 
@@ -25,7 +26,6 @@ header {
     align-items: flex-end; }
     header div img {
       height: 55%;
-      width: 60px;
       margin-right: 25px; }
     header div span {
       font-family: "Orbitron", sans-serif;
@@ -40,11 +40,30 @@ header {
     gap: 8em; }
     header nav a {
       text-decoration: none;
-      color: #CE0037;
+      /*color: $color-text-red;*/
       transform: scale(1.4, 2);
-      width: auto; }
+      width: auto;
+      /* código para el botón */
+      color: #CE0037; }
   header div img {
     width: 60px;
     height: 60px; }
+
+footer {
+  border-top: solid 1px;
+  border-color: #AEAEAE;
+  background-color: black; }
+  footer span {
+    color: #AEAEAE;
+    display: block;
+    text-align: center;
+    margin-top: 35px; }
+  footer div {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly; }
+    footer div img {
+      width: 2.5em; }
 
 /*# sourceMappingURL=main.css.map */
