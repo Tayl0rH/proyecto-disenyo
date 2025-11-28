@@ -1,12 +1,27 @@
-@mixin button-colour($colour){
+@import "variables";
+
+@mixin button-color($color){
     /* código para el botón */
+    color: $color;
+
+    &:hover{
+        
+    }
 }
 
-@mixin responsive-design(){
+@mixin responsive-design{
     /*
     
     código para un diseño responsive 
     investigar
 
+    */
+}
+
+@mixin change-theme{
+    /*
+    He asumido totalmente que hay que 
+    hay que hacer un mixin para esto
+                    <3
     */
 }

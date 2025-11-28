@@ -35,7 +35,6 @@ header {
 
     img {
       height: 55%;
-      width: 60px;
       margin-right: 25px;
     }
 
@@ -56,9 +55,10 @@ header {
 
     a {
       text-decoration: none;
-      color: $color-text-red;
+      /*color: $color-text-red;*/
       transform: scale(1.4, 2);
       width: auto;
+      @include button-color($color-text-red);
     }
   }
 
@@ -70,6 +70,27 @@ header {
   }
 }
 
+
+footer{
+    border-top: solid 1px;
+    border-color: $color-border-light;
+    background-color: $color-footer-nav;
+    span{
+        color: $color-border-light;
+        display: block;
+        text-align: center;
+        margin-top: 35px;
+    }
+    div{
+        margin-top: 10px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        img{
+            width: 2.5em;
+        }
+    }
+}
 #mainMatches {
   background-color: white;
   display: flex;
