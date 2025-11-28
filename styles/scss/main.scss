@@ -1,17 +1,22 @@
+@import "variables";
+@import "mixins";
+
 @import 'variables';
 @import 'mixins';
 * {
   font-family: $font-general;
 }
+
 body {
-  background-image: url("/images/background/fondo.png");
+  background-image: url("../../images/background/fondo.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 .bg-custom {
-  background-image: url("/images/index/indexImg.png");
+  background-image: url("../../images/index/indexImg.png");
   background-size: cover;
   overflow: hidden;
   height: 100vh;
@@ -22,15 +27,18 @@ header {
   border-bottom: solid 1px;
   border-color: $color-border-light;
   display: flex;
+
   div {
     padding: 25px 45px 25px 45px;
     display: flex;
     align-items: flex-end;
+
     img {
       height: 55%;
       width: 60px;
       margin-right: 25px;
     }
+
     span {
       font-family: $font-sentinels;
       color: $color-white;
@@ -39,11 +47,13 @@ header {
       display: block;
     }
   }
+
   nav {
     margin-left: 5em;
     display: flex;
     align-items: center;
     gap: 8em;
+
     a {
       text-decoration: none;
       color: $color-text-red;
@@ -58,6 +68,57 @@ header {
       height: 60px;
     }
   }
+}
+
+#mainMatches {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  #results {
+    flex-direction: column;
+  }
+
+  .partido {
+    position: relative;
+    width: 1000px;
+    height: 150px;
+    background-color: #A15A5A;
+    opacity: 30%;
+    margin-top: 40px;
+
+    .color-derrota {
+      position: absolute;
+      right: 0;
+      background-color: #D82D3C;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+    .color-victoria {
+      position: absolute;
+      right: 0;
+      background-color: #1C9D48;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+    .color-empate {
+      position: absolute;
+      right: 0;
+      background-color: #E3B336;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+
+
+
+  }
+
 }
 #contacto{
  height: 100vh;
