@@ -1,45 +1,61 @@
-@use 'partials/variables';
-@use 'partials/mixins';
-
-
-$color_fueraContent : black;
-
+@import "variables";
+@import "mixins";
+* {
+  font-family: $font-general;
+}
 body {
-    background-image: url("../img/fondo.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-image: url("/images/background/fondo.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg-custom {
+  background-image: url("/images/index/indexImg.png");
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
 }
 
-
-
-
 header {
-    background-color: $color_fueraContent;
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 40px;
-        border-radius: 10px;
-    }
-
-
-
-    ul {
-        text-decoration: none;
-        list-style: none;
-        display: flex;
-
-
-    }
-
+  background-color: $color-footer-nav;
+  border-bottom: solid 1px;
+  border-color: $color-border-light;
+  display: flex;
+  div {
+    padding: 25px 45px 25px 45px;
+    display: flex;
+    align-items: flex-end;
     img {
-        width: 60px;
-        height: 60px;
-
-
+      height: 55%;
+      width: 60px;
+      margin-right: 25px;
     }
+    span {
+      font-family: $font-sentinels;
+      color: $color-white;
+      font-weight: bold;
+      font-size: xx-large;
+      display: block;
+    }
+  }
+  nav {
+    margin-left: 5em;
+    display: flex;
+    align-items: center;
+    gap: 8em;
+    a {
+      text-decoration: none;
+      color: $color-text-red;
+      transform: scale(1.4, 2);
+      width: auto;
+    }
+  }
+
+  div {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
