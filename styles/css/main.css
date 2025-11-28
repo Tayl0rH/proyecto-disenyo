@@ -96,6 +96,76 @@ header div img {
   width: 28px;
   height: 150px;
   opacity: 100%;
+#contacto {
+  height: 100vh;
+  padding: 5rem;
+  display: flex;
+}
+
+#form {
+  background-color: black;
+  border: 1px solid white;
+  text-align: left;
+  height: 40rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+#form #form-title {
+  width: 100%;
+  border-bottom: 1px solid white;
+  text-align: center;
+}
+#form #form-title h2 {
+  margin: 10px;
+  font-size: 25px;
+}
+#form #form-content {
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#form #form-content label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+#form #form-content input {
+  background-image: linear-gradient(#390000 70%, red);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+  color: white;
+}
+#form #form-content textarea {
+  background-image: linear-gradient(#390000 90%, red);
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  color: white;
+  resize: none;
+}
+#form #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+#form #buttons button {
+  width: 8rem;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(#390000 60%, red);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
