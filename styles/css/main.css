@@ -1,50 +1,101 @@
 * {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+}
 
 body {
-  background-image: url("/images/background/fondo.png");
+  background-image: url("../../images/background/fondo.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+}
 
 .bg-custom {
-  background-image: url("/images/index/indexImg.png");
+  background-image: url("../../images/index/indexImg.png");
   background-size: cover;
   overflow: hidden;
-  height: 100vh; }
+  height: 100vh;
+}
 
 header {
   background-color: black;
   border-bottom: solid 1px;
   border-color: #AEAEAE;
-  display: flex; }
-  header div {
-    padding: 25px 45px 25px 45px;
-    display: flex;
-    align-items: flex-end; }
-    header div img {
-      height: 55%;
-      width: 60px;
-      margin-right: 25px; }
-    header div span {
-      font-family: "Orbitron", sans-serif;
-      color: white;
-      font-weight: bold;
-      font-size: xx-large;
-      display: block; }
-  header nav {
-    margin-left: 5em;
-    display: flex;
-    align-items: center;
-    gap: 8em; }
-    header nav a {
-      text-decoration: none;
-      color: #CE0037;
-      transform: scale(1.4, 2);
-      width: auto; }
-  header div img {
-    width: 60px;
-    height: 60px; }
+  display: flex;
+}
+header div {
+  padding: 25px 45px 25px 45px;
+  display: flex;
+  align-items: flex-end;
+}
+header div img {
+  height: 55%;
+  width: 60px;
+  margin-right: 25px;
+}
+header div span {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  display: block;
+}
+header nav {
+  margin-left: 5em;
+  display: flex;
+  align-items: center;
+  gap: 8em;
+}
+header nav a {
+  text-decoration: none;
+  color: #CE0037;
+  transform: scale(1.4, 2);
+  width: auto;
+}
+header div img {
+  width: 60px;
+  height: 60px;
+}
+
+#mainMatches {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+#mainMatches #results {
+  flex-direction: column;
+}
+#mainMatches .partido {
+  position: relative;
+  width: 1000px;
+  height: 150px;
+  background-color: #A15A5A;
+  opacity: 30%;
+  margin-top: 40px;
+}
+#mainMatches .partido .color-derrota {
+  position: absolute;
+  right: 0;
+  background-color: #D82D3C;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches .partido .color-victoria {
+  position: absolute;
+  right: 0;
+  background-color: #1C9D48;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches .partido .color-empate {
+  position: absolute;
+  right: 0;
+  background-color: #E3B336;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
 
 /*# sourceMappingURL=main.css.map */
