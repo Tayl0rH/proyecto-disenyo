@@ -22,12 +22,15 @@ header {
   border-bottom: solid 1px;
   border-color: $color-border-light;
   display: flex;
+  @include header-responsive-design;
   div {
-    padding: 25px 45px 25px 45px;
+    padding: 1em 2.5em 1em 2.5em;
+    height: auto;
     display: flex;
     align-items: flex-end;
     img {
-      height: 55%;
+      width: clamp(3em, 8vw, 4em);
+      height: auto;
       margin-right: 25px;
     }
     span {
@@ -35,6 +38,7 @@ header {
       color: $color-white;
       font-weight: bold;
       font-size: xx-large;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       display: block;
     }
   }
@@ -42,42 +46,40 @@ header {
     margin-left: 5em;
     display: flex;
     align-items: center;
-    gap: 8em;
+    gap: clamp(2em, 5vw, 8em);
     a {
       text-decoration: none;
-      /*color: $color-text-red;*/
       transform: scale(1.4, 2);
+      font-size: clamp(1rem, 2vw, 1.5rem);
       width: auto;
-      @include button-color($color-text-red);
+      @include header-button-color($color-text-red);
     }
   }
-
-  div {
-    img {
-      width: 60px;
-      height: 60px;
-    }
+  #checkbox{
+    /*
+      hacer responsive esto tmbn
+    */
+    margin-left: auto;
   }
 }
 
-
-footer{
-    border-top: solid 1px;
-    border-color: $color-border-light;
-    background-color: $color-footer-nav;
-    span{
-        color: $color-border-light;
-        display: block;
-        text-align: center;
-        margin-top: 35px;
+footer {
+  border-top: solid 1px;
+  border-color: $color-border-light;
+  background-color: $color-footer-nav;
+  span {
+    color: $color-border-light;
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+  }
+  div {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    img {
+      width: 2.5em;
     }
-    div{
-        margin-top: 10px;
-        padding-bottom: 30px;
-        display: flex;
-        justify-content: space-evenly;
-        img{
-            width: 2.5em;
-        }
-    }
+  }
 }
