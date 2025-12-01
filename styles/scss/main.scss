@@ -27,14 +27,16 @@ header {
   border-bottom: solid 1px;
   border-color: $color-border-light;
   display: flex;
-
+  @include header-responsive-design;
   div {
-    padding: 25px 45px 25px 45px;
+    padding: 1em 2.5em 1em 2.5em;
+    height: auto;
     display: flex;
     align-items: flex-end;
 
     img {
-      height: 55%;
+      width: clamp(3em, 8vw, 4em);
+      height: auto;
       margin-right: 25px;
     }
 
@@ -43,6 +45,7 @@ header {
       color: $color-white;
       font-weight: bold;
       font-size: xx-large;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       display: block;
     }
   }
@@ -51,173 +54,40 @@ header {
     margin-left: 5em;
     display: flex;
     align-items: center;
-    gap: 8em;
-
+    gap: clamp(2em, 5vw, 8em);
     a {
       text-decoration: none;
-      /*color: $color-text-red;*/
       transform: scale(1.4, 2);
+      font-size: clamp(1rem, 2vw, 1.5rem);
       width: auto;
-      @include button-color($color-text-red);
+      @include header-button-color($color-text-red);
     }
   }
+  #checkbox{
+    /*
+      hacer responsive esto tmbn
+    */
+    margin-left: auto;
+  }
+}
 
+footer {
+  border-top: solid 1px;
+  border-color: $color-border-light;
+  background-color: $color-footer-nav;
+  span {
+    color: $color-border-light;
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+  }
   div {
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-}
-
-
-footer{
-    border-top: solid 1px;
-    border-color: $color-border-light;
-    background-color: $color-footer-nav;
-    span{
-        color: $color-border-light;
-        display: block;
-        text-align: center;
-        margin-top: 35px;
-    }
-    div{
-        margin-top: 10px;
-        padding-bottom: 30px;
-        display: flex;
-        justify-content: space-evenly;
-        img{
-            width: 2.5em;
-        }
-    }
-}
-#mainMatches {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-
-  #results {
-    flex-direction: column;
-  }
-
-  .partido {
-    position: relative;
-    width: 1000px;
-    height: 150px;
-    background-color: #A15A5A;
-    opacity: 30%;
-    margin-top: 40px;
-
-    .color-derrota {
-      position: absolute;
-      right: 0;
-      background-color: #D82D3C;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-    .color-victoria {
-      position: absolute;
-      right: 0;
-      background-color: #1C9D48;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-    .color-empate {
-      position: absolute;
-      right: 0;
-      background-color: #E3B336;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-
-
-
-  }
-
-}
-#contacto{
- height: 100vh;
- padding: 5rem;
- display: flex;
-
-}
-#form {
-    background-color: black;
-    border: 1px solid white;
-    text-align: left;
-    height: 40rem;
-    width: 30rem;
+    margin-top: 10px;
+    padding-bottom: 30px;
     display: flex;
-    flex-direction: column;
-    color: white;
-
-    #form-title {
-        width: 100%;
-        border-bottom: 1px solid white;
-        text-align: center;
-
-        h2 {
-            margin: 10px;
-            font-size: 25px;
-        }
+    justify-content: space-evenly;
+    img {
+      width: 2.5em;
     }
-
-    #form-content {
-        padding: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
-        display: flex;
-        flex-direction: column;
-
-        label {
-            margin-top: 10px;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        input {
-            background-image: linear-gradient(#390000 70%, red);
-            border: 0;
-            border-radius: 5px;
-            height: 30px;
-            width: 100%;
-            padding-left: 10px;
-            color: white;
-        }
-
-        textarea {
-            background-image: linear-gradient(#390000 90%, red);
-            border: 0;
-            border-radius: 5px;
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            color: white;
-            resize: none;
-        }
-
-    }
-
-    #buttons {
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: 20px;
-
-        button {
-            width: 8rem;
-            height: 40px;
-            border-radius: 10px;
-            border: none;
-            background-image: linear-gradient(#390000 60%, red);
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-        }
-    }
+  }
 }
