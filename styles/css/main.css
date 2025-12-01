@@ -1,9 +1,15 @@
+@charset "UTF-8";
+@keyframes animated-header-button {
+  0% {
+    transform: scale(1.4, 2); }
+  100% {
+    transform: scale(1.8, 2.4); } }
 * {
   font-family: "Oswald", sans-serif;
 }
 
 body {
-  background-image: url("/images/background/fondo.png");
+  background-image: url("../../images/background/fondo.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +17,7 @@ body {
 }
 
 .bg-custom {
-  background-image: url("/images/index/indexImg.png");
+  background-image: url("../../images/index/indexImg.png");
   background-size: cover;
   overflow: hidden;
   height: 100vh;
@@ -21,6 +27,74 @@ header {
   background-color: black;
   border-bottom: solid 1px;
   border-color: #AEAEAE;
+  display: flex;
+  /*  responsive design para el header, en función de tamaño
+      de pantallas
+  */ }
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex; }
+      header nav {
+        margin-left: 0;
+        gap: 2em;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between; }
+      header div {
+        padding: 0.5em 0; }
+        header div img {
+          width: clamp(2.5em, 15vw, 3em); }
+        header div span {
+          font-size: clamp(1.2rem, 5vw, 1.8rem); } }
+  @media (max-width: 480px) {
+    header nav {
+      gap: 1em; }
+    header div img {
+      width: 2em; }
+    header div span {
+      font-size: 1.2rem; } }
+  header div {
+    padding: 1em 2.5em 1em 2.5em;
+    height: auto;
+    display: flex;
+    align-items: flex-end; }
+    header div img {
+      width: clamp(3em, 8vw, 4em);
+      height: auto;
+      margin-right: 25px; }
+    header div span {
+      font-family: "Orbitron", sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: xx-large;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      display: block; }
+  header nav {
+    margin-left: 5em;
+    display: flex;
+    align-items: center;
+    gap: clamp(2em, 5vw, 8em); }
+    header nav a {
+      text-decoration: none;
+      transform: scale(1.4, 2);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      width: auto;
+      /* código para el botón de header*/
+      color: #CE0037; }
+<<<<<<< HEAD
+      header nav a:hover {
+        animation: animated-header-button 0.5s ease 0s normal none;
+        transform: scale(1.8, 2.4); }
+  header #checkbox {
+    /*
+      hacer responsive esto tmbn
+    */
+    margin-left: auto; }
+=======
+  header div img {
+    width: 60px;
+    height: 60px; }
   display: flex;
 }
 header div {
@@ -57,6 +131,45 @@ header div img {
   height: 60px;
 }
 
+#mainMatches {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+#mainMatches #results {
+  flex-direction: column;
+}
+#mainMatches .partido {
+  position: relative;
+  width: 1000px;
+  height: 150px;
+  background-color: #A15A5A;
+  opacity: 30%;
+  margin-top: 40px;
+}
+#mainMatches .partido .color-derrota {
+  position: absolute;
+  right: 0;
+  background-color: #D82D3C;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches .partido .color-victoria {
+  position: absolute;
+  right: 0;
+  background-color: #1C9D48;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches .partido .color-empate {
+  position: absolute;
+  right: 0;
+  background-color: #E3B336;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
 #contacto {
   height: 100vh;
   padding: 5rem;
@@ -128,5 +241,23 @@ header div img {
   font-size: 18px;
   cursor: pointer;
 }
+>>>>>>> 691f5daabce25f201ccc28d881502b9472b56fd5
+
+footer {
+  border-top: solid 1px;
+  border-color: #AEAEAE;
+  background-color: black; }
+  footer span {
+    color: #AEAEAE;
+    display: block;
+    text-align: center;
+    margin-top: 35px; }
+  footer div {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly; }
+    footer div img {
+      width: 2.5em; }
 
 /*# sourceMappingURL=main.css.map */
