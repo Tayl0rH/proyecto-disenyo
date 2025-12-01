@@ -1,17 +1,22 @@
 @import "variables";
 @import "mixins";
+
+@import 'variables';
+@import 'mixins';
 * {
   font-family: $font-general;
 }
+
 body {
-  background-image: url("/images/background/fondo.png");
+  background-image: url("../../images/background/fondo.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 .bg-custom {
-  background-image: url("/images/index/indexImg.png");
+  background-image: url("../../images/index/indexImg.png");
   background-size: cover;
   overflow: hidden;
   height: 100vh;
@@ -28,11 +33,13 @@ header {
     height: auto;
     display: flex;
     align-items: flex-end;
+
     img {
       width: clamp(3em, 8vw, 4em);
       height: auto;
       margin-right: 25px;
     }
+
     span {
       font-family: $font-sentinels;
       color: $color-white;
@@ -42,6 +49,7 @@ header {
       display: block;
     }
   }
+
   nav {
     margin-left: 5em;
     display: flex;
