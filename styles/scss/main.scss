@@ -80,15 +80,21 @@ header {
   object-fit: cover;
   margin: 70px;
 
-
-
   #results {
 
+    display: flex;
     flex-direction: column;
     margin-right: 100px;
 
     .partido:first-child {
       margin-top: 25px;
+    }
+
+    img {
+      width: auto;
+      height: 97px;
+      margin-top: 10px;
+      margin-left: 100px;
     }
 
     .partido {
@@ -98,35 +104,38 @@ header {
       background-color: $color-marches-bg;
       opacity: 70%;
       margin-top: 60px;
+
+      .color-derrota {
+        position: absolute;
+        right: 0;
+        background-color: $color-red;
+        width: 28px;
+        height: 150px;
+        opacity: 100%;
+      }
+
+      .color-victoria {
+        position: absolute;
+        right: 0;
+        background-color: $color-green;
+        width: 28px;
+        height: 150px;
+        opacity: 100%;
+      }
+
+      .color-empate {
+        position: absolute;
+        right: 0;
+        background-color: $color-yellow ;
+        width: 28px;
+        height: 150px;
+        opacity: 100%;
+      }
+
     }
 
 
-    .color-derrota {
-      position: absolute;
-      right: 0;
-      background-color: $color-red;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
 
-    .color-victoria {
-      position: absolute;
-      right: 0;
-      background-color: $color-green;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-    .color-empate {
-      position: absolute;
-      right: 0;
-      background-color: $color-yellow ;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
 
 
 
