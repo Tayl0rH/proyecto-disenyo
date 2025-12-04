@@ -1,5 +1,15 @@
+@charset "UTF-8";
+@keyframes animated-header-button {
+  0% {
+    transform: scale(1.4, 2);
+  }
+  100% {
+    transform: scale(1.8, 2.4);
+  }
+}
 * {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Orbitron", sans-serif;
+}
 
 body {
   background-image: url("../../images/background/fondo.png");
@@ -11,219 +21,276 @@ body {
 .bg-custom {
   background-image: url("../../images/index/indexImg.png");
   background-size: cover;
-  overflow: hidden;
-  height: 100vh; }
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
 header {
   background-color: black;
   border-bottom: solid 1px;
   border-color: #AEAEAE;
-  display: flex; }
-  header div {
-    padding: 25px 45px 25px 45px;
-    display: flex;
-    align-items: flex-end; }
-    header div img {
-      height: 55%;
-      width: 60px;
-      margin-right: 25px; }
-    header div span {
-      font-family: "Orbitron", sans-serif;
-      color: white;
-      font-weight: bold;
-      font-size: xx-large;
-      display: block; }
-  header nav {
-    margin-left: 5em;
-    display: flex;
-    align-items: center;
-    gap: 8em; }
-    header nav a {
-      text-decoration: none;
-      color: #CE0037;
-      transform: scale(1.4, 2);
-      width: auto; }
-  header div img {
-    width: 60px;
-    height: 60px; }
-
-/*---------MATCHES-------------*/
-#mainMatches {
   display: flex;
-  object-fit: cover;
-  margin: 70px; }
-  #mainMatches #results {
+  /*  responsive design para el header, en función de tamaño
+      de pantallas
+  */
+}
+@media (max-width: 768px) {
+  header {
     flex-direction: column;
-    margin-right: 100px; }
-    #mainMatches #results .partido:first-child {
-      margin-top: 25px; }
-    #mainMatches #results .partido {
-      position: relative;
-      width: 1000px;
-      height: 150px;
-      background-color: #A15A5A;
-      opacity: 70%;
-      margin-top: 60px; }
-    #mainMatches #results .color-derrota {
-      position: absolute;
-      right: 0;
-      background-color: #D82D3C;
-      width: 28px;
-      height: 150px;
-      opacity: 100%; }
-    #mainMatches #results .color-victoria {
-      position: absolute;
-      right: 0;
-      background-color: #1C9D48;
-      width: 28px;
-      height: 150px;
-      opacity: 100%; }
-    #mainMatches #results .color-empate {
-      position: absolute;
-      right: 0;
-      background-color: #E3B336;
-      width: 28px;
-      height: 150px;
-      opacity: 100%; }
-  #mainMatches .estadisticas {
-    width: 602px;
-    height: 627px;
-    background-color: black;
-    border: 2px solid #AEAEAE;
-    display: flex;
-    flex-direction: column; }
-    #mainMatches .estadisticas .estadisticas-title {
-      height: 75px;
-      text-align: center;
-      border: 2px solid #AEAEAE;
-      justify-content: center;
-      align-items: center;
-      display: flex; }
-      #mainMatches .estadisticas .estadisticas-title .text-estadisticas-title {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 100;
-        color: #CE0037;
-        font-size: 40px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: -0.02em; }
-    #mainMatches .estadisticas .partidosjugados {
-      display: flex;
-      margin-top: 30px; }
-      #mainMatches .estadisticas .partidosjugados .text-partidosJugados {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 100;
-        color: #CE0037;
-        font-size: 24px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: -0.02em;
-        margin-left: 70px; }
-    #mainMatches .estadisticas .marcador {
-      height: 250px;
-      display: flex; }
-      #mainMatches .estadisticas .marcador .win {
-        margin: auto;
-        margin-top: 50px; }
-        #mainMatches .estadisticas .marcador .win .textmarcador {
-          font-size: 80px;
-          color: #CE0037; }
-        #mainMatches .estadisticas .marcador .win .numeros {
-          font-size: 60px;
-          color: white; }
-      #mainMatches .estadisticas .marcador .lose {
-        margin: auto;
-        margin-top: 50px; }
-        #mainMatches .estadisticas .marcador .lose .textmarcador {
-          font-size: 80px;
-          color: #CE0037; }
-        #mainMatches .estadisticas .marcador .lose .numeros {
-          font-size: 60px;
-          color: white; }
-      #mainMatches .estadisticas .marcador .empate {
-        margin: auto;
-        margin-top: 50px; }
-        #mainMatches .estadisticas .marcador .empate .textmarcador {
-          font-size: 80px;
-          color: #CE0037; }
-        #mainMatches .estadisticas .marcador .empate .numeros {
-          font-size: 60px;
-          color: white; }
-    #mainMatches .estadisticas .win-rate {
-      display: flex;
-      flex-direction: column; }
-      #mainMatches .estadisticas .win-rate .text-win-rate {
-        font-size: 60px;
-        color: white;
-        text-align: center; }
-      #mainMatches .estadisticas .win-rate .porcentaje-win {
-        font-size: 60px;
-        color: white;
-        text-align: center; }
+    align-items: flex;
+  }
+  header nav {
+    margin-left: 0;
+    gap: 2em;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header div {
+    padding: 0.5em 0;
+  }
+  header div img {
+    width: clamp(2.5em, 15vw, 3em);
+  }
+  header div span {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+}
+@media (max-width: 480px) {
+  header nav {
+    gap: 1em;
+  }
+  header div img {
+    width: 2em;
+  }
+  header div span {
+    font-size: 1.2rem;
+  }
+}
+header div {
+  padding: 1em 2.5em 1em 2.5em;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+}
+header div img {
+  width: clamp(3em, 8vw, 4em);
+  height: auto;
+  margin-right: 25px;
+}
+header div span {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  display: block;
+}
+header nav {
+  margin-left: 5em;
+  display: flex;
+  align-items: center;
+  gap: clamp(2em, 5vw, 8em);
+}
+header nav a {
+  text-decoration: none;
+  transform: scale(1.4, 2);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  width: auto;
+  /* código para el botón de header*/
+  color: #CE0037;
+}
+header nav a:hover {
+  animation: animated-header-button 0.5s ease 0s normal none;
+  transform: scale(1.8, 2.4);
+}
+header #checkbox {
+  /*
+    hacer responsive esto tmbn
+  */
+  margin-left: auto;
+}
 
-/*---------------Fin de matches-------------------*/
+/*INDEX*/
 #contacto {
   height: 100vh;
   padding: 5rem;
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+#image-valo {
+  height: auto;
+  width: auto;
+}
+#image-valo img {
+  height: auto;
+  width: 100%;
+}
 
 #form {
   background-color: black;
   border: 1px solid white;
   text-align: left;
-  height: 40rem;
-  width: 30rem;
+  height: auto;
+  width: 60rem;
   display: flex;
   flex-direction: column;
-  color: white; }
-  #form #form-title {
+  color: white;
+}
+#form #form-title {
+  width: 100%;
+  border-bottom: 1px solid white;
+  text-align: center;
+}
+#form #form-title h2 {
+  margin: 10px;
+  font-size: 40px;
+}
+#form #form-content {
+  padding: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  flex-direction: column;
+}
+#form #form-content label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+#form #form-content input {
+  background-image: linear-gradient(#390000 70%, red);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+  color: white;
+}
+#form #form-content textarea {
+  background-image: linear-gradient(#390000 90%, red);
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  color: white;
+  resize: none;
+}
+#form #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#form #buttons button {
+  width: 8rem;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(#390000 60%, red);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+footer {
+  border-top: solid 1px;
+  border-color: #AEAEAE;
+  background-color: black;
+}
+footer span {
+  color: #AEAEAE;
+  display: block;
+  text-align: center;
+  margin-top: 35px;
+}
+footer div {
+  margin-top: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer div img {
+  width: 2.5em;
+}
+
+@media (max-width: 1024px) {
+  #contacto {
+    flex-direction: column;
+    padding: 3rem;
+    gap: 5%;
+  }
+  #form {
+    width: 45rem;
+    height: auto;
+  }
+  #form-title h2 {
+    font-size: 32px;
+  }
+  #form-content label {
+    font-size: 20px;
+  }
+  #image-valo {
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  #contacto {
+    flex-direction: column;
+    padding: 2rem;
+    height: auto;
+  }
+  #form {
+    margin-left: 0;
+    width: 90%;
+    height: auto;
+  }
+  #form-content {
+    padding: 20px 30px;
+  }
+  #form-title h2 {
+    font-size: 28px;
+  }
+  #buttons {
+    display: flex;
+    justify-content: center;
+    gap: auto;
+  }
+  #buttons button {
     width: 100%;
-    border-bottom: 1px solid white;
-    text-align: center; }
-    #form #form-title h2 {
-      margin: 10px;
-      font-size: 25px; }
-  #form #form-content {
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    display: flex;
-    flex-direction: column; }
-    #form #form-content label {
-      margin-top: 10px;
-      margin-bottom: 5px;
-      font-size: 18px; }
-    #form #form-content input {
-      background-image: linear-gradient(#390000 70%, red);
-      border: 0;
-      border-radius: 5px;
-      height: 30px;
-      width: 100%;
-      padding-left: 10px;
-      color: white; }
-    #form #form-content textarea {
-      background-image: linear-gradient(#390000 90%, red);
-      border: 0;
-      border-radius: 5px;
-      width: 100%;
-      height: 150px;
-      padding: 10px;
-      color: white;
-      resize: none; }
-  #form #buttons {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px; }
-    #form #buttons button {
-      width: 8rem;
-      height: 40px;
-      border-radius: 10px;
-      border: none;
-      background-image: linear-gradient(#390000 60%, red);
-      color: white;
-      font-size: 18px;
-      cursor: pointer; }
+  }
+}
+@media (max-width: 480px) {
+  #contacto {
+    padding: 1rem;
+  }
+  #form {
+    width: 100%;
+  }
+  #form-title h2 {
+    font-size: 24px;
+  }
+  #form-content label {
+    font-size: 18px;
+  }
+  #form-content {
+    padding: 15px;
+  }
+  #form-content textarea {
+    height: 120px;
+  }
+  #buttons button {
+    font-size: 16px;
+    height: 35px;
+  }
+  footer div img {
+    width: 1.8em;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

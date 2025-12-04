@@ -30,11 +30,15 @@
         <span>SENTINELS</span>
       </div>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="players.html">Team</a>
-        <a href="matches.html">Results</a>
-      </nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="players.html">Team</a>
+            <a href="matches.html">Results</a>
+        </nav>
+
+        <div class="form-check form-switch" id="checkbox">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+        </div>
     </header>
     <div class="bg-custom">
       <div class="row justify-content-center">
@@ -56,37 +60,48 @@
         </div>
       </div>
     </div>
-    <div class="d-flex form">
-      <div class="row form-section">
-        <div class=""></div>
-        <form class="col-12">
-          <div class="form-group">
-            <label class="text-white" for="exampleFormControlInput1"
-              >Correo:</label
-            >
-            <input
-              type="email"
-              class="form-control text-white"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="text-white"
-              >Example textarea</label
-            >
-            <textarea
-              class="form-control text-white"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-        </form>
-      </div>
-      <img src="" alt="" />
+    <div id="contacto"  >
+       
+        <div id="form">
+            
+            <div id="form-title">
+                <h2>Contacta con nosotros</h2>
+            </div>
+            <div id="form-content">
+                <label for="email"> Correo: </label>
+                <input type="email"><br>
+                <label for="Asunto">Asunto:</label>
+                <input type="text"><br>
+                <label for="">Mensaje: </label><br>
+                <textarea name="" id=""></textarea>
+            </div>
+            <div id="buttons">
+                <button>Enivar</button>
+                <button>Eliminar</button>
+            </div>
+        </div>
+        <div id="image-valo">
+            <img src="/images/index/valo.png" alt="valorant">
+        </div>
+
     </div>
+    <footer>
+        <span> 2025 Sentinels -- All rights reserved</span>
+        <div>
+            <a href="www.instagram.com"><img src="images/rrss/instagram.png" alt="instagram"></a>
+            <a href="www.twitch.com"><img src="images/rrss/twitch.png" alt="twitch"></a>
+            <a href="www.x.com"><img src="images/rrss/x.png" alt="x"></a>
+        </div>
+    </footer>
+
     
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

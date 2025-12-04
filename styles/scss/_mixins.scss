@@ -9,4 +9,147 @@
     investigar
 
     */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex;
+
+    nav {
+      margin-left: 0;
+      gap: 2em;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    div {
+      padding: 0.5em 0;
+      img {
+        width: clamp(2.5em, 15vw, 3em);
+      }
+
+      span {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      gap: 1em;
+    }
+
+    div {
+      img {
+        width: 2em;
+      }
+
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+
+@mixin index-responsive-desing{
+  @media (max-width: 1024px) {
+    #contacto {
+      flex-direction: column;
+      padding: 3rem;
+      gap: 5%;
+    }
+
+    #form {
+      width: 45rem;
+      height: auto;
+    }
+
+    #form-title h2 {
+      font-size: 32px;
+    }
+
+    #form-content label {
+      font-size: 20px;
+    }
+
+    #image-valo{
+      width: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    #contacto {
+      flex-direction: column;
+      padding: 2rem;
+      height: auto;
+    }
+
+    #form {
+      margin-left: 0;
+      width: 90%;
+      height: auto;
+    }
+
+    #form-content {
+      padding: 20px 30px;
+    }
+
+    #form-title h2 {
+      font-size: 28px;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: center;
+      
+      gap: auto;
+    }
+
+    #buttons button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #contacto {
+      padding: 1rem;
+    }
+
+    #form {
+      width: 100%;
+    }
+
+    #form-title h2 {
+      font-size: 24px;
+    }
+
+    #form-content label {
+      font-size: 18px;
+    }
+
+    #form-content {
+      padding: 15px;
+    }
+
+    #form-content textarea {
+      height: 120px;
+    }
+
+    #buttons button {
+      font-size: 16px;
+      height: 35px;
+    }
+
+    footer div img {
+      width: 1.8em;
+    }
+  }   
+}
+
+
+@mixin change-theme {
+  /*
+    He asumido totalmente que hay que 
+    hay que hacer un mixin para esto
+                    <3
+    */
 }
