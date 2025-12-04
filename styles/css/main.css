@@ -1,27 +1,106 @@
 * {
-  font-family: "Oswald", sans-serif;
-}
+  font-family: "Oswald", sans-serif; }
 
 body {
   background-image: url("../../images/background/fondo.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-}
+  background-position: center; }
 
 .bg-custom {
   background-image: url("../../images/index/indexImg.png");
   background-size: cover;
   overflow: hidden;
-  height: 100vh;
-}
+  height: 100vh; }
+
+input[type="checkbox"]:checked {
+  background-color: black;
+  border-color: #CE0037; }
+input[type="checkbox"]:not(:checked) {
+  background-color: #F5F5F7;
+  border-color: #CE0037; }
+
+body:has(input[type="checkbox"]:checked) header {
+  background-color: #F5F5F7; }
+  body:has(input[type="checkbox"]:checked) header span {
+    color: black; }
+body:has(input[type="checkbox"]:checked) footer {
+  background-color: #F5F5F7; }
+  body:has(input[type="checkbox"]:checked) footer span {
+    color: black; }
+
+body:has(input[type="checkbox"]:not(:checked)) header {
+  background-color: black; }
+  body:has(input[type="checkbox"]:not(:checked)) header span {
+    color: #F5F5F7; }
+body:has(input[type="checkbox"]:not(:checked)) footer {
+  background-color: black; }
 
 header {
-  background-color: black;
   border-bottom: solid 1px;
   border-color: #AEAEAE;
   display: flex;
+  /*  responsive design para el header, en función de tamaño
+      de pantallas
+  */ }
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex; }
+      header nav {
+        margin-left: 0;
+        gap: 2em;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between; }
+      header div {
+        padding: 0.5em 0; }
+        header div img {
+          width: clamp(2.5em, 15vw, 3em); }
+        header div span {
+          font-size: clamp(1.2rem, 5vw, 1.8rem); } }
+  @media (max-width: 480px) {
+    header nav {
+      gap: 1em; }
+    header div img {
+      width: 2em; }
+    header div span {
+      font-size: 1.2rem; } }
+  header .header-sentinels {
+    padding: 1em 2.5em 1em 2.5em;
+    height: auto;
+    display: flex;
+    align-items: flex-end; }
+    header .header-sentinels img {
+      width: clamp(3em, 8vw, 4em);
+      height: auto;
+      margin-right: 25px; }
+    header .header-sentinels span {
+      font-family: "Orbitron", sans-serif;
+      color: #F5F5F7;
+      font-weight: bold;
+      font-size: xx-large;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      display: block; }
+  header .header-nav {
+    width: 80%;
+    margin-left: 5em;
+    display: flex;
+    align-items: center;
+    gap: clamp(2em, 5vw, 8em); }
+    header .header-nav a {
+      text-decoration: none;
+      transform: scale(1.4, 2);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      width: auto;
+      /* código para el botón de header*/
+      color: #CE0037; }
+      header .header-nav a:hover {
+        animation: animated-header-button 0.5s ease 0s normal none;
+        transform: scale(1.8, 2.4); }
+
+.header-checkbox {
 }
 header div {
   padding: 25px 45px 25px 45px;
@@ -224,18 +303,30 @@ header div img {
 }
 #form #form-title {
   width: 100%;
-  border-bottom: 1px solid white;
-  text-align: center;
-}
-#form #form-title h2 {
-  margin: 10px;
-  font-size: 25px;
-}
-#form #form-content {
-  padding: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin: 0;
+  padding: 12px;
   display: flex;
+  justify-content: end;
+  /*
+    función para acapturar check y cambiar color
+    */ }
+
+footer {
+  border-top: solid 1px;
+  border-color: #AEAEAE;
+  /*background-color: $color-footer-nav;*/ }
+  footer span {
+    color: #AEAEAE;
+    display: block;
+    text-align: center;
+    margin-top: 35px; }
+  footer div {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly; }
+    footer div img {
+      width: 2.5em; }
   flex-direction: column;
 }
 #form #form-content label {
