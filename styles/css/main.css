@@ -1,9 +1,3 @@
-@charset "UTF-8";
-@keyframes animated-header-button {
-  0% {
-    transform: scale(1.4, 2); }
-  100% {
-    transform: scale(1.8, 2.4); } }
 * {
   font-family: "Oswald", sans-serif; }
 
@@ -107,6 +101,207 @@ header {
         transform: scale(1.8, 2.4); }
 
 .header-checkbox {
+}
+header div {
+  padding: 25px 45px 25px 45px;
+  display: flex;
+  align-items: flex-end;
+}
+header div img {
+  height: 55%;
+  width: 60px;
+  margin-right: 25px;
+}
+header div span {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  display: block;
+}
+header nav {
+  margin-left: 5em;
+  display: flex;
+  align-items: center;
+  gap: 8em;
+}
+header nav a {
+  text-decoration: none;
+  color: #CE0037;
+  transform: scale(1.4, 2);
+  width: auto;
+}
+header div img {
+  width: 60px;
+  height: 60px;
+}
+
+/*---------MATCHES-------------*/
+#mainMatches {
+  display: flex;
+  object-fit: cover;
+  margin: 70px;
+}
+#mainMatches #results {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+#mainMatches #results .partido:first-child {
+  margin-top: 25px;
+}
+#mainMatches #results img {
+  width: auto;
+  height: 97px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+#mainMatches #results .partido {
+  position: relative;
+  width: 1000px;
+  height: 150px;
+  background-color: #A15A5A;
+  opacity: 70%;
+  margin-top: 60px;
+}
+#mainMatches #results .partido .color-derrota {
+  position: absolute;
+  right: 0;
+  background-color: #D82D3C;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches #results .partido .color-victoria {
+  position: absolute;
+  right: 0;
+  background-color: #1C9D48;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches #results .partido .color-empate {
+  position: absolute;
+  right: 0;
+  background-color: #E3B336;
+  width: 28px;
+  height: 150px;
+  opacity: 100%;
+}
+#mainMatches .estadisticas {
+  width: 602px;
+  height: 627px;
+  background-color: black;
+  border: 2px solid #AEAEAE;
+  display: flex;
+  flex-direction: column;
+}
+#mainMatches .estadisticas .estadisticas-title {
+  height: 75px;
+  text-align: center;
+  border: 2px solid #AEAEAE;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+#mainMatches .estadisticas .estadisticas-title .text-estadisticas-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 100;
+  color: #CE0037;
+  font-size: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.02em;
+}
+#mainMatches .estadisticas .partidosjugados {
+  display: flex;
+  margin-top: 30px;
+}
+#mainMatches .estadisticas .partidosjugados .text-partidosJugados {
+  font-family: "Oswald", sans-serif;
+  font-weight: 100;
+  color: #CE0037;
+  font-size: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.02em;
+  margin-left: 70px;
+}
+#mainMatches .estadisticas .marcador {
+  height: 250px;
+  display: flex;
+}
+#mainMatches .estadisticas .marcador .win {
+  margin: auto;
+  margin-top: 50px;
+}
+#mainMatches .estadisticas .marcador .win .textmarcador {
+  font-size: 80px;
+  color: #CE0037;
+}
+#mainMatches .estadisticas .marcador .win .numeros {
+  font-size: 60px;
+  color: white;
+}
+#mainMatches .estadisticas .marcador .lose {
+  margin: auto;
+  margin-top: 50px;
+}
+#mainMatches .estadisticas .marcador .lose .textmarcador {
+  font-size: 80px;
+  color: #CE0037;
+}
+#mainMatches .estadisticas .marcador .lose .numeros {
+  font-size: 60px;
+  color: white;
+}
+#mainMatches .estadisticas .marcador .empate {
+  margin: auto;
+  margin-top: 50px;
+}
+#mainMatches .estadisticas .marcador .empate .textmarcador {
+  font-size: 80px;
+  color: #CE0037;
+}
+#mainMatches .estadisticas .marcador .empate .numeros {
+  font-size: 60px;
+  color: white;
+}
+#mainMatches .estadisticas .win-rate {
+  display: flex;
+  flex-direction: column;
+}
+#mainMatches .estadisticas .win-rate .text-win-rate {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+#mainMatches .estadisticas .win-rate .porcentaje-win {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+/*---------------Fin de matches-------------------*/
+#contacto {
+  height: 100vh;
+  padding: 5rem;
+  display: flex;
+}
+
+#form {
+  background-color: black;
+  border: 1px solid white;
+  text-align: left;
+  height: 40rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+#form #form-title {
   width: 100%;
   margin: 0;
   padding: 12px;
@@ -132,5 +327,46 @@ footer {
     justify-content: space-evenly; }
     footer div img {
       width: 2.5em; }
+  flex-direction: column;
+}
+#form #form-content label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+#form #form-content input {
+  background-image: linear-gradient(#390000 70%, red);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+  color: white;
+}
+#form #form-content textarea {
+  background-image: linear-gradient(#390000 90%, red);
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  color: white;
+  resize: none;
+}
+#form #buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+#form #buttons button {
+  width: 8rem;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(#390000 60%, red);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=main.css.map */
