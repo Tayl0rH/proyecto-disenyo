@@ -1,6 +1,6 @@
-
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
+@import "functions";
 * {
   font-family: $font-general;
 }
@@ -19,14 +19,49 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+input[type="checkbox"] {
+  &:checked {
+    background-color: page-theme(true);
+    border-color: $color-text-red;
+  }
+  &:not(:checked) {
+    background-color: page-theme(false);
+    border-color: $color-text-red;
+  }
+}
+body:has(input[type="checkbox"]:checked) {
+  header {
+    background-color: page-theme(false);
+    span {
+      color: page-theme(true);
+    }
+  }
+  footer {
+    background-color: page-theme(false);
+    span {
+      color: page-theme(true);
+    }
+  }
+}
+body:has(input[type="checkbox"]:not(:checked)) {
+  header {
+    background-color: page-theme(true);
+    span {
+      color: page-theme(false);  
+    }
+  }
+  footer {
+    background-color: page-theme(true);
+  }
+}
 
 header {
-  background-color: $color-footer-nav;
   border-bottom: solid 1px;
   border-color: $color-border-light;
   display: flex;
   @include header-responsive-design;
-  div {
+
+  .header-sentinels {
     padding: 1em 2.5em 1em 2.5em;
     height: auto;
     display: flex;
@@ -48,7 +83,8 @@ header {
     }
   }
 
-  nav {
+  .header-nav {
+    width: 80%;
     margin-left: 5em;
     display: flex;
     align-items: center;
@@ -61,18 +97,22 @@ header {
       @include header-button-color($color-text-red);
     }
   }
-  #checkbox{
-    /*
-      hacer responsive esto tmbn
+}
+.header-checkbox {
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  justify-content: end;
+  /*
+    función para acapturar check y cambiar color
     */
-    margin-left: auto;
-  }
 }
 
 footer {
   border-top: solid 1px;
   border-color: $color-border-light;
-  background-color: $color-footer-nav;
+  /*background-color: $color-footer-nav;*/
   span {
     color: $color-border-light;
     display: block;
