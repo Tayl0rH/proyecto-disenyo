@@ -1,0 +1,284 @@
+
+
+body {
+  background-image: url("../../images/background/fondo.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-custom {
+  background-image: url("../../images/index/indexImg.png");
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+
+header {
+ 
+
+
+  display: flex;
+
+  div {
+    padding: 25px 45px 25px 45px;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      height: 55%;
+      width: 60px;
+      margin-right: 25px;
+    }
+
+    span {
+     
+     
+      font-weight: bold;
+      font-size: xx-large;
+      display: block;
+    }
+  }
+
+  nav {
+    margin-left: 5em;
+    display: flex;
+    align-items: center;
+    gap: 8em;
+
+    a {
+      text-decoration: none;
+     
+      transform: scale(1.4, 2);
+      width: auto;
+    }
+  }
+
+  div {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+#mainMatches {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  #results {
+    flex-direction: column;
+  }
+
+  .partido {
+    position: relative;
+    width: 1000px;
+    height: 150px;
+    background-color: #A15A5A;
+    opacity: 30%;
+    margin-top: 40px;
+
+    .color-derrota {
+      position: absolute;
+      right: 0;
+      background-color: #D82D3C;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+    .color-victoria {
+      position: absolute;
+      right: 0;
+      background-color: #1C9D48;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+    .color-empate {
+      position: absolute;
+      right: 0;
+      background-color: #E3B336;
+      width: 28px;
+      height: 150px;
+      opacity: 100%;
+    }
+
+
+
+
+  }
+
+}
+#contacto{
+ height: 100vh;
+ padding: 5rem;
+ display: flex;
+
+}
+#form {
+    background-color: black;
+    border: 1px solid white;
+    text-align: left;
+    height: 40rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    #form-title {
+        width: 100%;
+        border-bottom: 1px solid white;
+        text-align: center;
+
+        h2 {
+            margin: 10px;
+            font-size: 25px;
+        }
+    }
+
+    #form-content {
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        input {
+            background-image: linear-gradient(#390000 70%, red);
+            border: 0;
+            border-radius: 5px;
+            height: 30px;
+            width: 100%;
+            padding-left: 10px;
+            color: white;
+        }
+
+        textarea {
+            background-image: linear-gradient(#390000 90%, red);
+            border: 0;
+            border-radius: 5px;
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            color: white;
+            resize: none;
+        }
+
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+
+        button {
+            width: 8rem;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-image: linear-gradient(#390000 60%, red);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/*--------PLAYERS--------*/
+
+.card-text{
+    font-family:'Courier New', Courier, monospace;
+    padding: 15px;
+    height: 50vh;
+    width: 35vw;
+    color: white;
+    border: 1px white solid;
+    background-color: black;
+    .card-text-subtitle{
+        position: relative;
+        top: -40px;
+        font-size: 25px;
+    }
+    .card-text-p {
+        position: relative;
+        top:-30px;
+        font-size: 16px;
+        margin-top: 5px;
+        width: 33vw;
+        color: #838383;
+    }
+    .card-text-icon{
+        margin-top: 5vh;
+        margin-left: 5vw;
+        img {
+            margin: 20px;
+            height: 25px;
+        }
+    }
+    .card-text-title1{
+        display: flex;
+        margin-top: 0px;
+        .cudradito{
+            margin-right: 10px;
+            position: relative;
+            top: 20px;
+            background-color:#B60525 ;
+            height: 20px;
+            width: 5px;
+        }
+    }
+}
+
+
+
+.card-image{
+    object-fit:contain;
+    font-family:'Courier New', Courier, monospace ;
+    height: auto;
+  
+  .card-image-title{
+    padding: 10px;
+    background-color: black;
+    padding-left: 30px;
+    position: relative;
+    height: 70px;
+    
+    border-left:5px  #B60525 solid;
+    border-right:5px  #B60525 solid;
+    border-top:5px  #B60525 solid;
+    h2{
+        margin-top: 10px;
+      color: #B60525;
+      font-size: 50px;
+    }
+  }
+  
+    
+    img{
+       height: 60vh;
+        border: 5px #B60525 solid;
+        
+    }
+    
+    
+  
+}
+
+.players{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    margin-bottom: 200px;
+}
