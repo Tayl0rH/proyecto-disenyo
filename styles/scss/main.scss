@@ -75,71 +75,55 @@ header {
 /*---------MATCHES-------------*/
 
 #mainMatches {
-
-  display: flex;
-  object-fit: cover;
+  display: grid;
+  grid-template-columns: 1fr 602px; // columna principal + estadísticas
+  gap: 20px;
   margin: 70px;
 
   #results {
-
-    display: flex;
-    flex-direction: column;
-    margin-right: 100px;
-
-    .partido:first-child {
-      margin-top: 25px;
-    }
-
-    img {
-      width: auto;
-      height: 97px;
-      margin-top: 10px;
-      margin-left: 100px;
-    }
+    display: grid;
+    grid-auto-rows: 150px;
+    gap: 60px;
+    width: 100%;
 
     .partido {
       position: relative;
-      width: 1000px;
-      height: 150px;
       background-color: $color-marches-bg;
-      opacity: 70%;
-      margin-top: 60px;
+      opacity: 0.7;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      border-radius: 10px;
 
-      .color-derrota {
-        position: absolute;
-        right: 0;
-        background-color: $color-red;
-        width: 28px;
-        height: 150px;
-        opacity: 100%;
+      img {
+        height: 97px;
+        width: auto;
+        margin-left: 100px;
       }
 
-      .color-victoria {
-        position: absolute;
-        right: 0;
-        background-color: $color-green;
-        width: 28px;
-        height: 150px;
-        opacity: 100%;
-      }
-
+      .color-derrota,
+      .color-victoria,
       .color-empate {
         position: absolute;
         right: 0;
-        background-color: $color-yellow ;
         width: 28px;
-        height: 150px;
-        opacity: 100%;
+        height: 100%;
+        opacity: 1;
       }
 
+      .color-derrota {
+        background-color: $color-red;
+      }
+
+      .color-victoria {
+        background-color: $color-green;
+      }
+
+      .color-empate {
+        background-color: $color-yellow;
+      }
     }
-
-
-
-
-
-
-
   }
 
   .estadisticas {
@@ -149,7 +133,6 @@ header {
     border: 2px solid #AEAEAE;
     display: flex;
     flex-direction: column;
-
 
     .estadisticas-title {
       height: 75px;
@@ -165,16 +148,12 @@ header {
         color: $color-text-red;
         font-size: 40px;
         text-align: center;
-        justify-content: center;
-        align-items: center;
         letter-spacing: -0.02em;
-
       }
     }
 
     .partidosjugados {
       display: flex;
-
       margin-top: 30px;
 
       .text-partidosJugados {
@@ -182,49 +161,17 @@ header {
         font-weight: 100;
         color: $color-text-red;
         font-size: 24px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: -0.02em;
         margin-left: 70px;
+        text-align: center;
       }
     }
 
     .marcador {
-
       height: 250px;
       display: flex;
 
-      .win {
-        margin: auto;
-        margin-top: 50px;
-
-        .textmarcador {
-          font-size: 80px;
-          color: $color-text-red;
-        }
-
-        .numeros {
-          font-size: 60px;
-          color: white;
-        }
-      }
-
-      .lose {
-        margin: auto;
-        margin-top: 50px;
-
-        .textmarcador {
-          font-size: 80px;
-          color: $color-text-red;
-        }
-
-        .numeros {
-          font-size: 60px;
-          color: white;
-        }
-      }
-
+      .win,
+      .lose,
       .empate {
         margin: auto;
         margin-top: 50px;
@@ -245,24 +192,145 @@ header {
       display: flex;
       flex-direction: column;
 
-      .text-win-rate {
-        font-size: 60px;
-        color: white;
-        text-align: center;
-      }
-
+      .text-win-rate,
       .porcentaje-win {
         font-size: 60px;
         color: white;
         text-align: center;
       }
     }
-
-
-
   }
 
+  // MEDIA QUERIES PARA RESPONSIVE
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 400px;
 
+    .estadisticas {
+      width: 400px;
+      height: auto;
+
+      .estadisticas-title .text-estadisticas-title {
+        font-size: 32px;
+      }
+
+      .marcador .win,
+      .marcador .lose,
+      .marcador .empate {
+        .textmarcador {
+          font-size: 60px;
+        }
+
+        .numeros {
+          font-size: 45px;
+        }
+      }
+
+      .win-rate .text-win-rate,
+      .win-rate .porcentaje-win {
+        font-size: 45px;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr; // pasar todo a una columna
+    margin: 20px;
+
+    #results {
+      grid-auto-rows: auto;
+      gap: 30px;
+
+      .partido img {
+        margin-left: 20px;
+        height: 70px;
+      }
+    }
+
+    .estadisticas {
+      width: 100%;
+      height: auto;
+
+      .estadisticas-title .text-estadisticas-title {
+        font-size: 28px;
+      }
+
+      .partidosjugados .text-partidosJugados {
+        font-size: 20px;
+        margin-left: 20px;
+      }
+
+      .marcador .win,
+      .marcador .lose,
+      .marcador .empate {
+        .textmarcador {
+          font-size: 50px;
+        }
+
+        .numeros {
+          font-size: 35px;
+        }
+      }
+
+      .win-rate .text-win-rate,
+      .win-rate .porcentaje-win {
+        font-size: 35px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin: 10px;
+
+    #results .partido {
+      flex-direction: column;
+      padding: 10px;
+
+      img {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+
+      .color-derrota,
+      .color-victoria,
+      .color-empate {
+        width: 100%;
+        height: 10px;
+        top: auto;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .estadisticas {
+      .estadisticas-title .text-estadisticas-title {
+        font-size: 24px;
+      }
+
+      .partidosjugados .text-partidosJugados {
+        font-size: 18px;
+        margin-left: 0;
+      }
+
+      .marcador .win,
+      .marcador .lose,
+      .marcador .empate {
+        margin-top: 20px;
+
+        .textmarcador {
+          font-size: 40px;
+        }
+
+        .numeros {
+          font-size: 30px;
+        }
+      }
+
+      .win-rate .text-win-rate,
+      .win-rate .porcentaje-win {
+        font-size: 30px;
+      }
+    }
+  }
 }
 
 /*---------------Fin de matches-------------------*/
