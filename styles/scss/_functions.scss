@@ -1,0 +1,8 @@
+@function page-theme($state) {
+    
+  @if $state == true {
+    @return $color-footer-nav;
+  } @else if $state == false {
+    @return $color-white;
+  }
+}

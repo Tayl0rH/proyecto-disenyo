@@ -1,10 +1,8 @@
 @import "variables";
 @import "mixins";
-
-@import 'variables';
-@import 'mixins';
+@import "functions";
 * {
-  font-family: $font-general;
+  font-family: $font-sentinels;
 }
 
 body {
@@ -18,24 +16,61 @@ body {
 .bg-custom {
   background-image: url("../../images/index/indexImg.png");
   background-size: cover;
-  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
+}
+input[type="checkbox"] {
+  &:checked {
+    background-color: page-theme(true);
+    border-color: $color-text-red;
+  }
+  &:not(:checked) {
+    background-color: page-theme(false);
+    border-color: $color-text-red;
+  }
+}
+body:has(input[type="checkbox"]:checked) {
+  header {
+    background-color: page-theme(false);
+    span {
+      color: page-theme(true);
+    }
+  }
+  footer {
+    background-color: page-theme(false);
+    span {
+      color: page-theme(true);
+    }
+  }
+}
+body:has(input[type="checkbox"]:not(:checked)) {
+  header {
+    background-color: page-theme(true);
+    span {
+      color: page-theme(false);  
+    }
+  }
+  footer {
+    background-color: page-theme(true);
+  }
 }
 
 header {
-  background-color: $color-footer-nav;
   border-bottom: solid 1px;
   border-color: $color-border-light;
   display: flex;
+  @include header-responsive-design;
 
-  div {
-    padding: 25px 45px 25px 45px;
+  .header-sentinels {
+    padding: 1em 2.5em 1em 2.5em;
+    height: auto;
     display: flex;
     align-items: flex-end;
 
     img {
-      height: 55%;
-      width: 60px;
+      width: clamp(3em, 8vw, 4em);
+      height: auto;
       margin-right: 25px;
     }
 
@@ -44,97 +79,89 @@ header {
       color: $color-white;
       font-weight: bold;
       font-size: xx-large;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       display: block;
     }
   }
 
-  nav {
+  .header-nav {
+     width: 80%;
     margin-left: 5em;
     display: flex;
     align-items: center;
-    gap: 8em;
-
+    gap: clamp(2em, 5vw, 8em);
     a {
       text-decoration: none;
-      color: $color-text-red;
       transform: scale(1.4, 2);
+      font-size: clamp(1rem, 2vw, 1.5rem);
       width: auto;
-    }
-  }
-
-  div {
-    img {
-      width: 60px;
-      height: 60px;
+      @include header-button-color($color-text-red);
     }
   }
 }
-
-#mainMatches {
-  background-color: white;
+.header-checkbox {
+  width: 100%;
+  margin: 0;
+  padding: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+}
 
-  #results {
-    flex-direction: column;
+footer {
+  border-top: solid 1px;
+  border-color: $color-border-light;
+
+  /*background-color: $color-footer-nav;*/
+  span {
+    color: $color-border-light;
+    display: block;
+    text-align: center;
+    margin-top: 35px;
   }
-
-  .partido {
-    position: relative;
-    width: 1000px;
-    height: 150px;
-    background-color: #A15A5A;
-    opacity: 30%;
-    margin-top: 40px;
-
-    .color-derrota {
-      position: absolute;
-      right: 0;
-      background-color: #D82D3C;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
+  div {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    img {
+      width: 2.5em;
     }
-
-    .color-victoria {
-      position: absolute;
-      right: 0;
-      background-color: #1C9D48;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-    .color-empate {
-      position: absolute;
-      right: 0;
-      background-color: #E3B336;
-      width: 28px;
-      height: 150px;
-      opacity: 100%;
-    }
-
-
-
-
   }
+}
+
+
+
+/*INDEX*/
+
+#contacto{
+  height: 100vh;
+  padding: 5rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10%;
 
 }
-#contacto{
- height: 100vh;
- padding: 5rem;
- display: flex;
-
+#image-valo{
+  height: auto;
+  width: auto;
+  img{
+    height: auto;
+    width: 100%;
+  }
 }
 #form {
+    
     background-color: black;
     border: 1px solid white;
     text-align: left;
-    height: 40rem;
-    width: 30rem;
+    height:auto;
+    width: 60rem;
     display: flex;
     flex-direction: column;
     color: white;
+    
 
     #form-title {
         width: 100%;
@@ -143,21 +170,21 @@ header {
 
         h2 {
             margin: 10px;
-            font-size: 25px;
+            font-size: 40px;
         }
     }
 
     #form-content {
         padding: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 70px;
+        padding-right: 70px;
         display: flex;
         flex-direction: column;
 
         label {
             margin-top: 10px;
             margin-bottom: 5px;
-            font-size: 18px;
+            font-size: 25px;
         }
 
         input {
@@ -187,7 +214,7 @@ header {
         display: flex;
         justify-content: space-evenly;
         margin-top: 20px;
-
+        margin-bottom: 20px;
         button {
             width: 8rem;
             height: 40px;
