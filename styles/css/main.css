@@ -1,372 +1,75 @@
-* {
-  font-family: "Oswald", sans-serif; }
+/*
+Error: Undefined mixin 'header-responsive-design'.
+        on line 65 of styles/scss/main.scss, in `header-responsive-design'
+        from line 65 of styles/scss/main.scss
 
-body {
-  background-image: url("../../images/background/fondo.png");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+60: 
+61: header {
+62:   border-bottom: solid 1px;
+63:   border-color: $color-border-light;
+64:   display: flex;
+65:   @include header-responsive-design;
+66: 
+67:   .header-sentinels {
+68:     padding: 1em 2.5em 1em 2.5em;
+69:     height: auto;
+70:     display: flex;
 
-.bg-custom {
-  background-image: url("../../images/index/indexImg.png");
-  background-size: cover;
-  overflow: hidden;
-  height: 100vh; }
-
-input[type="checkbox"]:checked {
-  background-color: black;
-  border-color: #CE0037; }
-input[type="checkbox"]:not(:checked) {
-  background-color: #F5F5F7;
-  border-color: #CE0037; }
-
-body:has(input[type="checkbox"]:checked) header {
-  background-color: #F5F5F7; }
-  body:has(input[type="checkbox"]:checked) header span {
-    color: black; }
-body:has(input[type="checkbox"]:checked) footer {
-  background-color: #F5F5F7; }
-  body:has(input[type="checkbox"]:checked) footer span {
-    color: black; }
-
-body:has(input[type="checkbox"]:not(:checked)) header {
-  background-color: black; }
-  body:has(input[type="checkbox"]:not(:checked)) header span {
-    color: #F5F5F7; }
-body:has(input[type="checkbox"]:not(:checked)) footer {
-  background-color: black; }
-
-header {
-  border-bottom: solid 1px;
-  border-color: #AEAEAE;
-  display: flex;
-  /*  responsive design para el header, en función de tamaño
-      de pantallas
-  */ }
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex; }
-      header nav {
-        margin-left: 0;
-        gap: 2em;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-between; }
-      header div {
-        padding: 0.5em 0; }
-        header div img {
-          width: clamp(2.5em, 15vw, 3em); }
-        header div span {
-          font-size: clamp(1.2rem, 5vw, 1.8rem); } }
-  @media (max-width: 480px) {
-    header nav {
-      gap: 1em; }
-    header div img {
-      width: 2em; }
-    header div span {
-      font-size: 1.2rem; } }
-  header .header-sentinels {
-    padding: 1em 2.5em 1em 2.5em;
-    height: auto;
-    display: flex;
-    align-items: flex-end; }
-    header .header-sentinels img {
-      width: clamp(3em, 8vw, 4em);
-      height: auto;
-      margin-right: 25px; }
-    header .header-sentinels span {
-      font-family: "Orbitron", sans-serif;
-      color: #F5F5F7;
-      font-weight: bold;
-      font-size: xx-large;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      display: block; }
-  header .header-nav {
-    width: 80%;
-    margin-left: 5em;
-    display: flex;
-    align-items: center;
-    gap: clamp(2em, 5vw, 8em); }
-    header .header-nav a {
-      text-decoration: none;
-      transform: scale(1.4, 2);
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      width: auto;
-      /* código para el botón de header*/
-      color: #CE0037; }
-      header .header-nav a:hover {
-        animation: animated-header-button 0.5s ease 0s normal none;
-        transform: scale(1.8, 2.4); }
-
-.header-checkbox {
-}
-header div {
-  padding: 25px 45px 25px 45px;
-  display: flex;
-  align-items: flex-end;
-}
-header div img {
-  height: 55%;
-  width: 60px;
-  margin-right: 25px;
-}
-header div span {
-  font-family: "Orbitron", sans-serif;
-  color: white;
-  font-weight: bold;
-  font-size: xx-large;
-  display: block;
-}
-header nav {
-  margin-left: 5em;
-  display: flex;
-  align-items: center;
-  gap: 8em;
-}
-header nav a {
-  text-decoration: none;
-  color: #CE0037;
-  transform: scale(1.4, 2);
-  width: auto;
-}
-header div img {
-  width: 60px;
-  height: 60px;
-}
-
-/*---------MATCHES-------------*/
-#mainMatches {
-  display: flex;
-  object-fit: cover;
-  margin: 70px;
-}
-#mainMatches #results {
-  display: flex;
-  flex-direction: column;
-  margin-right: 100px;
-}
-#mainMatches #results .partido:first-child {
-  margin-top: 25px;
-}
-#mainMatches #results img {
-  width: auto;
-  height: 97px;
-  margin-top: 10px;
-  margin-left: 100px;
-}
-#mainMatches #results .partido {
-  position: relative;
-  width: 1000px;
-  height: 150px;
-  background-color: #A15A5A;
-  opacity: 70%;
-  margin-top: 60px;
-}
-#mainMatches #results .partido .color-derrota {
-  position: absolute;
-  right: 0;
-  background-color: #D82D3C;
-  width: 28px;
-  height: 150px;
-  opacity: 100%;
-}
-#mainMatches #results .partido .color-victoria {
-  position: absolute;
-  right: 0;
-  background-color: #1C9D48;
-  width: 28px;
-  height: 150px;
-  opacity: 100%;
-}
-#mainMatches #results .partido .color-empate {
-  position: absolute;
-  right: 0;
-  background-color: #E3B336;
-  width: 28px;
-  height: 150px;
-  opacity: 100%;
-}
-#mainMatches .estadisticas {
-  width: 602px;
-  height: 627px;
-  background-color: black;
-  border: 2px solid #AEAEAE;
-  display: flex;
-  flex-direction: column;
-}
-#mainMatches .estadisticas .estadisticas-title {
-  height: 75px;
-  text-align: center;
-  border: 2px solid #AEAEAE;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-#mainMatches .estadisticas .estadisticas-title .text-estadisticas-title {
-  font-family: "Oswald", sans-serif;
-  font-weight: 100;
-  color: #CE0037;
-  font-size: 40px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: -0.02em;
-}
-#mainMatches .estadisticas .partidosjugados {
-  display: flex;
-  margin-top: 30px;
-}
-#mainMatches .estadisticas .partidosjugados .text-partidosJugados {
-  font-family: "Oswald", sans-serif;
-  font-weight: 100;
-  color: #CE0037;
-  font-size: 24px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: -0.02em;
-  margin-left: 70px;
-}
-#mainMatches .estadisticas .marcador {
-  height: 250px;
-  display: flex;
-}
-#mainMatches .estadisticas .marcador .win {
-  margin: auto;
-  margin-top: 50px;
-}
-#mainMatches .estadisticas .marcador .win .textmarcador {
-  font-size: 80px;
-  color: #CE0037;
-}
-#mainMatches .estadisticas .marcador .win .numeros {
-  font-size: 60px;
-  color: white;
-}
-#mainMatches .estadisticas .marcador .lose {
-  margin: auto;
-  margin-top: 50px;
-}
-#mainMatches .estadisticas .marcador .lose .textmarcador {
-  font-size: 80px;
-  color: #CE0037;
-}
-#mainMatches .estadisticas .marcador .lose .numeros {
-  font-size: 60px;
-  color: white;
-}
-#mainMatches .estadisticas .marcador .empate {
-  margin: auto;
-  margin-top: 50px;
-}
-#mainMatches .estadisticas .marcador .empate .textmarcador {
-  font-size: 80px;
-  color: #CE0037;
-}
-#mainMatches .estadisticas .marcador .empate .numeros {
-  font-size: 60px;
-  color: white;
-}
-#mainMatches .estadisticas .win-rate {
-  display: flex;
-  flex-direction: column;
-}
-#mainMatches .estadisticas .win-rate .text-win-rate {
-  font-size: 60px;
-  color: white;
-  text-align: center;
-}
-#mainMatches .estadisticas .win-rate .porcentaje-win {
-  font-size: 60px;
-  color: white;
-  text-align: center;
-}
-
-/*---------------Fin de matches-------------------*/
-#contacto {
-  height: 100vh;
-  padding: 5rem;
-  display: flex;
-}
-
-#form {
-  background-color: black;
-  border: 1px solid white;
-  text-align: left;
-  height: 40rem;
-  width: 30rem;
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-#form #form-title {
-  width: 100%;
-  margin: 0;
-  padding: 12px;
-  display: flex;
-  justify-content: end;
-  /*
-    función para acapturar check y cambiar color
-    */ }
-
-footer {
-  border-top: solid 1px;
-  border-color: #AEAEAE;
-  /*background-color: $color-footer-nav;*/ }
-  footer span {
-    color: #AEAEAE;
-    display: block;
-    text-align: center;
-    margin-top: 35px; }
-  footer div {
-    margin-top: 10px;
-    padding-bottom: 30px;
-    display: flex;
-    justify-content: space-evenly; }
-    footer div img {
-      width: 2.5em; }
-  flex-direction: column;
-}
-#form #form-content label {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 18px;
-}
-#form #form-content input {
-  background-image: linear-gradient(#390000 70%, red);
-  border: 0;
-  border-radius: 5px;
-  height: 30px;
-  width: 100%;
-  padding-left: 10px;
-  color: white;
-}
-#form #form-content textarea {
-  background-image: linear-gradient(#390000 90%, red);
-  border: 0;
-  border-radius: 5px;
-  width: 100%;
-  height: 150px;
-  padding: 10px;
-  color: white;
-  resize: none;
-}
-#form #buttons {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
-}
-#form #buttons button {
-  width: 8rem;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  background-image: linear-gradient(#390000 60%, red);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+styles/scss/main.scss:65:in `header-responsive-design'
+styles/scss/main.scss:65
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:348:in 'block in Sass::Tree::Visitors::Perform#visit_mixin'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in 'block in Sass::Stack#with_mixin'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in 'Sass::Stack#with_frame'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in 'Sass::Stack#with_mixin'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:346:in 'Sass::Tree::Visitors::Perform#visit_mixin'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in 'Sass::Tree::Visitors::Base#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in 'block in Sass::Tree::Visitors::Perform#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in 'block in Sass::Stack#with_base'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in 'Sass::Stack#with_frame'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in 'Sass::Stack#with_base'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in 'Sass::Tree::Visitors::Perform#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in 'block (2 levels) in Sass::Tree::Visitors::Perform#visit_rule'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in 'Array#map'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in 'block in Sass::Tree::Visitors::Perform#visit_rule'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in 'Sass::Tree::Visitors::Perform#with_environment'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:438:in 'Sass::Tree::Visitors::Perform#visit_rule'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in 'Sass::Tree::Visitors::Base#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in 'block in Sass::Tree::Visitors::Perform#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in 'block in Sass::Stack#with_base'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in 'Sass::Stack#with_frame'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in 'Sass::Stack#with_base'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in 'Sass::Tree::Visitors::Perform#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in 'block in Sass::Tree::Visitors::Base#visit_children'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in 'Array#map'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in 'Sass::Tree::Visitors::Base#visit_children'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in 'block in Sass::Tree::Visitors::Perform#visit_children'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in 'Sass::Tree::Visitors::Perform#with_environment'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in 'Sass::Tree::Visitors::Perform#visit_children'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in 'block in Sass::Tree::Visitors::Base#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in 'Sass::Tree::Visitors::Perform#visit_root'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in 'Sass::Tree::Visitors::Base#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in 'Sass::Tree::Visitors::Perform#visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in 'Sass::Tree::Visitors::Perform.visit'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in 'Sass::Tree::RootNode#css_tree'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in 'Sass::Tree::RootNode#render_with_sourcemap'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in 'Sass::Engine#_render_with_sourcemap'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in 'Sass::Engine#render_with_sourcemap'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in 'Sass::Plugin::Compiler#update_stylesheet'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in 'block in Sass::Plugin::Compiler#update_stylesheets'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in 'Array#each'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in 'Sass::Plugin::Compiler#update_stylesheets'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:294:in 'Sass::Plugin::Compiler#watch'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/plugin.rb:109:in 'Sass::Plugin#method_missing'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:358:in 'Sass::Exec::SassScss#watch_or_update'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:51:in 'Sass::Exec::SassScss#process_result'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in 'Sass::Exec::Base#parse'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in 'Sass::Exec::Base#parse!'
+C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-3.7.4/bin/sass:13:in '<top (required)>'
+C:/Ruby34-x64/bin/sass:36:in 'Kernel#load'
+C:/Ruby34-x64/bin/sass:36:in '<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'header-responsive-design'.\A         on line 65 of styles/scss/main.scss, in `header-responsive-design'\A         from line 65 of styles/scss/main.scss\A \A 60: \A 61: header {\A 62:   border-bottom: solid 1px;\A 63:   border-color: $color-border-light;\A 64:   display: flex;\A 65:   @include header-responsive-design;\A 66: \A 67:   .header-sentinels {\A 68:     padding: 1em 2.5em 1em 2.5em;\A 69:     height: auto;\A 70:     display: flex;"; }
