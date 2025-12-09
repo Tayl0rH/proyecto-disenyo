@@ -1,5 +1,163 @@
-@mixin button-colour($colour){
-    /* código para el botón */
+@import "variables";
+
+@keyframes animated-header-button {
+  0% {
+    transform: scale(1.4, 2);
+  }
+  100% {
+    transform: scale(1.8, 2.4);
+  }
+}
+
+@mixin header-button-color($color) {
+  /* código para el botón de header*/
+  color: $color;
+
+  &:hover {
+    animation: animated-header-button 0.5s ease 0s normal none;
+    transform: scale(1.8, 2.4);
+  }
+}
+@mixin header-responsive-design() {
+    /*
+    
+    código para un diseño responsive 
+    investigar
+     hola
+    */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex;
+
+    nav {
+      margin-left: 0 !important;
+      gap: 2em;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    div {
+      padding: 0.5em 0;
+      img {
+        width: clamp(2.5em, 15vw, 3em);
+      }
+
+      span {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      gap: 1em;
+    }
+
+    div {
+      img {
+        width: 2em;
+      }
+
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@mixin index-responsive-desing{
+  @media (max-width: 1024px) {
+    #contacto {
+      flex-direction: column;
+      padding: 3rem;
+      gap: 5%;
+    }
+
+    #form {
+      width: 45rem;
+      height: auto;
+    }
+
+    #form-title h2 {
+      font-size: 32px;
+    }
+
+    #form-content label {
+      font-size: 20px;
+    }
+
+    #image-valo{
+      width: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    #contacto {
+      flex-direction: column;
+      padding: 2rem;
+      height: auto;
+    }
+
+    #form {
+      margin-left: 0 !important;
+      width: 90%;
+      height: auto;
+    }
+
+    #form-content {
+      padding: 20px 30px;
+    }
+
+    #form-title h2 {
+      font-size: 28px;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: center;
+      
+      gap: auto;
+    }
+
+    #buttons button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #contacto {
+      padding: 1rem;
+    }
+
+    #form {
+      width: 100%;
+    }
+
+    #form-title h2 {
+      font-size: 24px;
+    }
+
+    #form-content label {
+      font-size: 18px;
+    }
+
+    #form-content {
+      padding: 15px;
+    }
+
+    #form-content textarea {
+      height: 120px;
+    }
+
+    #buttons button {
+      font-size: 16px;
+      height: 35px;
+    }
+
+    footer div img {
+      width: 1.8em;
+    }
+  }   
 }
 
 @mixin matches-resonsive-design(){
@@ -36,14 +194,14 @@
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr; // pasar todo a una columna
-    margin: 20px;
+    margin: 20px !important;
 
     #results {
       grid-auto-rows: auto;
       gap: 30px;
 
       .partido img {
-        margin-left: 20px;
+        margin-left: 20px !important;
         height: 70px;
       }
     }
@@ -58,7 +216,7 @@
 
       .partidosjugados .text-partidosJugados {
         font-size: 20px;
-        margin-left: 20px;
+        margin-left: 20px !important;
       }
 
       .marcador .win,
@@ -81,15 +239,15 @@
   }
 
   @media (max-width: 600px) {
-    margin: 10px;
+    margin: 10px !important;
 
     #results .partido {
       flex-direction: column;
       padding: 10px;
 
       img {
-        margin-left: 0;
-        margin-bottom: 10px;
+        margin-left: 0 !important;
+        margin-bottom: 10px !important;
       }
 
       .color-derrota,
@@ -110,13 +268,13 @@
 
       .partidosjugados .text-partidosJugados {
         font-size: 18px;
-        margin-left: 0;
+        margin-left: 0 !important;
       }
 
       .marcador .win,
       .marcador .lose,
       .marcador .empate {
-        margin-top: 20px;
+        margin-top: 20px !important;
 
         .textmarcador {
           font-size: 40px;
