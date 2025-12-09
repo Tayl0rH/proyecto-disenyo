@@ -30,7 +30,7 @@
     align-items: flex;
 
     nav {
-      margin-left: 0;
+      margin-left: 0 !important;
       gap: 2em;
       flex-wrap: wrap;
       width: 100%;
@@ -99,7 +99,7 @@
     }
 
     #form {
-      margin-left: 0;
+      margin-left: 0 !important;
       width: 90%;
       height: auto;
     }
@@ -194,14 +194,14 @@
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr; // pasar todo a una columna
-    margin: 20px;
+    margin: 20px !important;
 
     #results {
       grid-auto-rows: auto;
       gap: 30px;
 
       .partido img {
-        margin-left: 20px;
+        margin-left: 20px !important;
         height: 70px;
       }
     }
@@ -216,7 +216,7 @@
 
       .partidosjugados .text-partidosJugados {
         font-size: 20px;
-        margin-left: 20px;
+        margin-left: 20px !important;
       }
 
       .marcador .win,
@@ -239,15 +239,15 @@
   }
 
   @media (max-width: 600px) {
-    margin: 10px;
+    margin: 10px !important;
 
     #results .partido {
       flex-direction: column;
       padding: 10px;
 
       img {
-        margin-left: 0;
-        margin-bottom: 10px;
+        margin-left: 0 !important;
+        margin-bottom: 10px !important;
       }
 
       .color-derrota,
@@ -268,13 +268,13 @@
 
       .partidosjugados .text-partidosJugados {
         font-size: 18px;
-        margin-left: 0;
+        margin-left: 0 !important;
       }
 
       .marcador .win,
       .marcador .lose,
       .marcador .empate {
-        margin-top: 20px;
+        margin-top: 20px !important;
 
         .textmarcador {
           font-size: 40px;
