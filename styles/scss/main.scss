@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 @import "functions";
+
 * {
   font-family: $font-sentinels;
   margin: 0 !important;
@@ -24,12 +25,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  mask-image: linear-gradient(black 80%, transparent);
+
 }
+
 input[type="checkbox"] {
   &:checked {
     background-color: page-theme(true);
     border-color: $color-text-red;
   }
+
   &:not(:checked) {
     background-color: page-theme(false);
     border-color: $color-text-red;
@@ -39,26 +44,33 @@ input[type="checkbox"] {
 /*Tema blanco*/
 body:has(input[type="checkbox"]:checked) {
   background-image: url("../../images/background/fondo-blanco.png");
+
   .bg-custom {
     background-image: url("../../images/index/indexImg-blanco.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    mask-image: linear-gradient(black 80%, transparent);
   }
+
   header {
     background-color: $color-white;
+
     .header-sentinels {
       span {
         color: $color-footer-nav;
       }
     }
+
     a {
       text-shadow: 1px 1px 20px $color-footer-nav;
     }
   }
+
   footer {
     background-color: $color-white;
+
     span {
       color: black;
     }
@@ -84,6 +96,7 @@ body:has(input[type="checkbox"]:checked) {
         color: black;
       }
     }
+
     #buttons {
       button {
         background-image: linear-gradient(#ff6666 0%, #b30000 90%);
@@ -94,11 +107,14 @@ body:has(input[type="checkbox"]:checked) {
 
   .partido {
     background-color: rgba($color-border-light, 0.7) !important;
+
+
+
     #versus {
-      filter: brightness(0) saturate(100%) invert(11%) sepia(62%)
-        saturate(2100%) hue-rotate(345deg) brightness(70%) contrast(90%);
+      filter: brightness(0) saturate(100%) invert(11%) sepia(62%) saturate(2100%) hue-rotate(345deg) brightness(70%) contrast(90%);
     }
   }
+
   .estadisticas {
     background-color: $color-white !important;
     border-color: $color-footer-nav !important;
@@ -138,6 +154,7 @@ body:has(input[type="checkbox"]:checked) {
 body:has(input[type="checkbox"]:not(:checked)) {
   header {
     background-color: $color-footer-nav;
+
     .header-sentinels {
       span {
         color: $color-white;
@@ -148,6 +165,7 @@ body:has(input[type="checkbox"]:not(:checked)) {
       text-shadow: 1px 1px 45px $color-white;
     }
   }
+
   footer {
     background-color: $color-footer-nav;
   }
@@ -186,6 +204,7 @@ header {
     display: flex;
     align-items: center;
     gap: clamp(2em, 5vw, 8em);
+
     a {
       text-decoration: none;
       transform: scale(1.4, 2);
@@ -195,6 +214,7 @@ header {
       @include header-button-color($color-text-red);
     }
   }
+
   .header-checkbox {
     width: 100%;
     padding: 12px;
@@ -208,17 +228,20 @@ footer {
   border-color: $color-border-light;
   position: relative;
   z-index: 10;
+
   span {
     color: $color-border-light;
     display: block;
     text-align: center;
     margin-top: 35px !important;
   }
+
   div {
     margin-top: 10px !important;
     padding-bottom: 30px;
     display: flex;
     justify-content: space-evenly;
+
     img {
       width: 2.5em;
     }
@@ -235,18 +258,22 @@ footer {
   align-items: center;
   gap: 10%;
 }
+
 #image-valo {
   filter: drop-shadow(0 4px 6px $color-player-bg);
   height: auto;
   width: auto;
+
   img {
     height: auto;
     width: 100%;
   }
 }
+
 #logoSentinelsIndex {
   filter: drop-shadow(0 4px 6px $color-player-bg);
 }
+
 #form {
   background-color: black;
   border: 1px solid white;
@@ -266,6 +293,7 @@ footer {
     h2 {
       margin: 10px;
       font-size: 40px;
+
     }
   }
 
@@ -309,6 +337,7 @@ footer {
     justify-content: space-evenly;
     margin-top: 20px;
     margin-bottom: 20px;
+
     button {
       width: 8rem;
       height: 40px;
@@ -348,6 +377,11 @@ footer {
       justify-content: space-around;
       padding: 10px;
       border-radius: 10px;
+
+
+      h2 {
+        color: white;
+      }
 
       img {
         height: 97px;
