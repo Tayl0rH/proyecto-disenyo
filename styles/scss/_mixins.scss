@@ -292,3 +292,53 @@
     }
   }
 }
+
+
+
+
+
+@mixin bg-image-cover($img) {
+  background-image: url($img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@mixin red-gradient-bg($light: #ff4d4d, $dark: #cc0000) {
+  background-image: linear-gradient($light 0%, $dark 90%);
+}
+
+@mixin black-box($border-color: white) {
+  background-color: black;
+  border: 1px solid $border-color;
+  color: white;
+}
+@mixin white-box($border-color: black) {
+  background-color: white;
+  border: 1px solid $border-color;
+  color: black;
+}
+
+
+@mixin red-input-style {
+  @include red-gradient-bg;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+}
+
+
+@mixin red-button {
+  @include red-gradient-bg;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+
+@mixin sentinel-drop-shadow($color-shadow: $color-player-bg) {
+  filter: drop-shadow(0 4px 6px $color-shadow);
+}
