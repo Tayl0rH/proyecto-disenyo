@@ -519,11 +519,9 @@ footer {
   border: 1px #F5F5F7 solid;
   background-color: black; }
   .mainPlayers .card-text .card-text-subtitle {
-    position: relative;
     top: -40px;
     font-size: 25px; }
   .mainPlayers .card-text .card-text-p {
-    position: relative;
     top: -30px;
     font-size: 16px;
     margin-top: 5px;
@@ -540,10 +538,9 @@ footer {
     margin-top: 0px; }
     .mainPlayers .card-text .card-text-title1 .cudradito {
       margin-right: 10px;
-      position: relative;
       top: 20px;
       background-color: #B60525;
-      height: 20px;
+      height: 35px;
       width: 5px; }
 .mainPlayers .card-image {
   object-fit: contain;
