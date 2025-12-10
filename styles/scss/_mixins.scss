@@ -25,6 +25,104 @@
     investigar
      hola
     */
+  $mobile: 576px;
+  $tablet: 768px;
+  $desktop: 1200px;
+
+  @mixin respond($break) {
+    @if $break == mobile {
+      @media (max-width: #{$mobile}) { @content; }
+    }
+    @if $break == tablet {
+      @media (max-width: #{$tablet}) { @content; }
+    }
+    @if $break == desktop {
+      @media (max-width: #{$desktop}) { @content; }
+    }
+  }
+
+  .players {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    
+    @include respond(tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include respond(mobile) {
+      padding: 10px;
+      gap: 15px;
+    }
+  }
+
+  .card-text {
+    width: 50%;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+
+    @include respond(mobile) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .card-image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      object-fit: cover;
+
+      @include respond(mobile) {
+        max-width: 250px;
+      }
+    }
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+  }
+
+  .card-text-title1 h2,
+  .card-text-subtitle h2 {
+    @include respond(mobile) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 20px;
+
+    @include respond(mobile) {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    @include respond(mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex;
