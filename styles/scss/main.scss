@@ -113,7 +113,7 @@ body:has(input[type="checkbox"]:checked) {
   }
 
   .partido {
-    background-color: rgba($color-marches-bg, 0.7);
+    background-color: border-light-rgba();
 
     #versus {
       filter: brightness(0) saturate(100%) invert(11%) sepia(62%) saturate(2100%) hue-rotate(345deg) brightness(70%) contrast(90%);
@@ -378,7 +378,7 @@ footer {
 
     .partido {
       position: relative;
-      background-color: rgba($color-marches-bg, 0.7);
+      background-color: border-light-rgba();
       display: flex;
       justify-content: space-around;
       align-items: center;
