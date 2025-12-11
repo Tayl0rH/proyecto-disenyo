@@ -293,6 +293,56 @@
   }
 }
 
+@mixin players-responsive-design(){
+    @media (max-width: 768px) {
+    .players {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .card-text {
+      width: 100%;
+    }
+  
+    .card-image {
+      width: 100%;
+    }
+  
+    .header-nav {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+  }
+    
+  @media (max-width: 576px) {
+    .players {
+      padding: 10px;
+      gap: 15px;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  
+    .card-image img {
+      max-width: 250px;
+    }
+  
+    .card-text-title1 h2,
+    .card-text-subtitle h2 {
+      font-size: 1.2rem;
+    }
+  
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+}
+
 
 
 
@@ -342,4 +392,5 @@
 @mixin sentinel-drop-shadow($color-shadow: $color-player-bg) {
   filter: drop-shadow(0 4px 6px $color-shadow);
 }
+
 
