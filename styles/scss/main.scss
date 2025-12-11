@@ -139,6 +139,15 @@ body:has(input[type="checkbox"]:checked) {
       color: $color-black !important;
     }
   }
+
+  .card-text {
+    border-color: $color-border-light;
+    background-color: $color-white;
+    color: $color-black;
+  }
+  .card-image-title {
+    background-color: $color-white;
+  }
 }
 
 /*Tema negro*/
@@ -486,7 +495,6 @@ footer {
 
 .mainPlayers {
   .card-text {
-    font-family: "Courier New", Courier, monospace;
     padding: 15px;
     height: auto;
     width: 35vw;
@@ -508,7 +516,7 @@ footer {
     }
 
     .card-text-subtitle {
-      margin-top: -10px; // arregla el solapamiento
+      margin-top: -10px; 
       font-size: 25px;
     }
 
@@ -532,7 +540,6 @@ footer {
 
   .card-image {
     object-fit: contain;
-    font-family: "Courier New", Courier, monospace;
 
     .card-image-title {
       padding: 10px 0 10px 30px;

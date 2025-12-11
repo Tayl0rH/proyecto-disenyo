@@ -126,6 +126,14 @@ body:has(input[type=checkbox]:checked) .estadisticas .text-win-rate,
 body:has(input[type=checkbox]:checked) .estadisticas .porcentaje-win {
   color: black !important;
 }
+body:has(input[type=checkbox]:checked) .card-text {
+  border-color: #AEAEAE;
+  background-color: #F5F5F7;
+  color: black;
+}
+body:has(input[type=checkbox]:checked) .card-image-title {
+  background-color: #F5F5F7;
+}
 
 /*Tema negro*/
 body:has(input[type=checkbox]:not(:checked)) header {
@@ -649,7 +657,6 @@ footer div img {
 
 /*---------------Fin de matches-------------------*/
 .mainPlayers .card-text {
-  font-family: "Courier New", Courier, monospace;
   padding: 15px;
   height: auto;
   width: 35vw;
@@ -688,7 +695,6 @@ footer div img {
 }
 .mainPlayers .card-image {
   object-fit: contain;
-  font-family: "Courier New", Courier, monospace;
 }
 .mainPlayers .card-image .card-image-title {
   padding: 10px 0 10px 30px;
