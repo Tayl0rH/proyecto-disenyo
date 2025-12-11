@@ -19,7 +19,7 @@
   }
 }
 @mixin header-responsive-design() {
-    /*
+  /*
     
     código para un diseño responsive 
     investigar
@@ -66,7 +66,7 @@
   }
 }
 
-@mixin index-responsive-desing{
+@mixin index-responsive-desing {
   @media (max-width: 1024px) {
     #contacto {
       flex-direction: column;
@@ -87,7 +87,7 @@
       font-size: 20px;
     }
 
-    #image-valo{
+    #image-valo {
       width: auto;
     }
   }
@@ -115,7 +115,7 @@
     #buttons {
       display: flex;
       justify-content: center;
-      
+
       gap: auto;
     }
 
@@ -157,12 +157,11 @@
     footer div img {
       width: 1.8em;
     }
-  }   
+  }
 }
 
-@mixin matches-resonsive-design(){
-    
-    @media (max-width: 1200px) {
+@mixin matches-resonsive-design() {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr 400px;
 
     .estadisticas {
@@ -293,9 +292,67 @@
   }
 }
 
+@mixin players-responsive-design() {
+  @media (max-width: 1024px) {
+    .players {
+      gap: 60px;
+    }
 
+    .card-text {
+      width: 45vw;
 
+      .card-text-p {
+        width: 40vw;
+      }
+    }
 
+    .card-image img {
+      height: 50vh;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .players {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .card-text,
+    .card-image {
+      width: 90vw;
+    }
+
+    .card-text .card-text-p {
+      width: 80vw;
+    }
+
+    .card-image img {
+      height: 45vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .players {
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+
+      .card-text-title1 h2,
+      .card-text-subtitle h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    .card-image img {
+      max-width: 250px;
+      height: auto;
+    }
+  }
+}
 
 @mixin bg-image-cover($img) {
   background-image: url($img);
@@ -303,7 +360,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
 
 @mixin red-gradient-bg($light: #ff4d4d, $dark: #cc0000) {
   background-image: linear-gradient($light 0%, $dark 90%);
@@ -320,7 +376,6 @@
   color: black;
 }
 
-
 @mixin red-input-style {
   @include red-gradient-bg;
   border: 0;
@@ -329,7 +384,6 @@
   color: white;
 }
 
-
 @mixin red-button {
   @include red-gradient-bg;
   border: none;
@@ -337,7 +391,6 @@
   color: white;
   cursor: pointer;
 }
-
 
 @mixin sentinel-drop-shadow($color-shadow: $color-player-bg) {
   filter: drop-shadow(0 4px 6px $color-shadow);

@@ -11,7 +11,6 @@ body {
   @include bg-image-cover("../../images/background/fondo.png");
   background-attachment: fixed;
 
-
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
@@ -29,14 +28,12 @@ input[type="checkbox"] {
     background-color: page-theme(true);
     border-color: $color-text-red;
     box-shadow: none;
-
   }
 
   &:not(:checked) {
     background-color: page-theme(false);
     border-color: $color-text-red;
     box-shadow: none;
-
   }
 }
 
@@ -46,7 +43,7 @@ body:has(input[type="checkbox"]:checked) {
   //background-image: url("../../images/background/fondo-blanco.png");
 
   .bg-custom {
-    @include bg-image-cover("../../images/index/indexImg-blanco.jpg");  
+    @include bg-image-cover("../../images/index/indexImg-blanco.jpg");
     height: 100vh;
     mask-image: linear-gradient($color-black 80%, transparent);
   }
@@ -75,7 +72,6 @@ body:has(input[type="checkbox"]:checked) {
 
   #form {
     @include white-box($color-border-light);
-
 
     #form-title {
       border-bottom: 1px solid $color-border-light;
@@ -182,8 +178,6 @@ header {
       width: clamp(3em, 8vw, 4em);
       height: auto;
       margin-right: 25px !important;
-
-
     }
 
     span {
@@ -300,16 +294,22 @@ footer {
 
       input {
         @include red-input-style;
-        background-image: linear-gradient($color-red-light 0%, $color-red-dark 90%);
+        background-image: linear-gradient(
+          $color-red-light 0%,
+          $color-red-dark 90%
+        );
 
         height: 30px;
-        
+
         padding-left: 10px;
       }
 
       textarea {
         @include red-input-style;
-        background-image: linear-gradient($color-red-light 0%, $color-red-dark 90%);
+        background-image: linear-gradient(
+          $color-red-light 0%,
+          $color-red-dark 90%
+        );
 
         height: 150px;
         padding: 10px;
@@ -327,7 +327,10 @@ footer {
 
         width: 8rem;
         height: 40px;
-        background-image: linear-gradient($color-red-light 0%, $color-red-dark 90%);
+        background-image: linear-gradient(
+          $color-red-light 0%,
+          $color-red-dark 90%
+        );
         font-size: 18px;
       }
     }
@@ -485,23 +488,33 @@ footer {
   .card-text {
     font-family: "Courier New", Courier, monospace;
     padding: 15px;
-    height: 50vh;
+    height: auto;
     width: 35vw;
     color: $color-white;
     border: 1px $color-white solid;
     background-color: $color-black;
 
+    .card-text-title1 {
+      display: flex;
+
+      .cudradito {
+        margin-right: 10px;
+        position: relative;
+        top: 20px;
+        background-color: $color-player-border;
+        height: 20px;
+        width: 5px;
+      }
+    }
+
     .card-text-subtitle {
-      position: relative;
-      top: -40px;
+      margin-top: -10px; // arregla el solapamiento
       font-size: 25px;
     }
 
     .card-text-p {
-      position: relative;
-      top: -30px;
+      margin-top: 10px;
       font-size: 16px;
-      margin-top: 5px;
       width: 33vw;
       color: $color-grey-muted;
     }
@@ -513,21 +526,6 @@ footer {
       img {
         margin: 20px;
         height: 25px;
-
-      }
-    }
-
-    .card-text-title1 {
-      display: flex;
-      margin-top: 0px;
-
-      .cudradito {
-        margin-right: 10px;
-        position: relative;
-        top: 20px;
-        background-color: $color-player-border;
-        height: 20px;
-        width: 5px;
       }
     }
   }
@@ -535,18 +533,17 @@ footer {
   .card-image {
     object-fit: contain;
     font-family: "Courier New", Courier, monospace;
-    height: auto;
 
     .card-image-title {
-      padding: 10px;
+      padding: 10px 0 10px 30px;
       background-color: $color-black;
-      padding-left: 30px;
       position: relative;
       height: 70px;
 
       border-left: 5px $color-player-border solid;
       border-right: 5px $color-player-border solid;
       border-top: 5px $color-player-border solid;
+
       h2 {
         margin-top: 10px;
         color: $color-player-border;
@@ -568,4 +565,5 @@ footer {
     margin-bottom: 200px;
     min-height: 100dvh;
   }
+  @include players-responsive-design;
 }
