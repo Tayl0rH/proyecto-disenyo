@@ -4,6 +4,7 @@
   0% {
     transform: scale(1.4, 2);
   }
+
   100% {
     transform: scale(1.8, 2.4);
   }
@@ -18,13 +19,9 @@
     transform: scale(1.8, 2.4);
   }
 }
+
 @mixin header-responsive-design() {
-  /*
-    
-    código para un diseño responsive 
-    investigar
-     hola
-    */
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex;
@@ -39,6 +36,7 @@
 
     div {
       padding: 0.5em 0;
+
       img {
         width: clamp(2.5em, 15vw, 3em);
       }
@@ -91,6 +89,7 @@
       width: auto;
     }
   }
+
   @media (max-width: 768px) {
     #contacto {
       flex-direction: column;
@@ -161,7 +160,7 @@
 }
 
 @mixin matches-resonsive-design() {
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
     grid-template-columns: 1fr 400px;
 
     .estadisticas {
@@ -191,7 +190,7 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr; // pasar todo a una columna
     margin: 20px !important;
 
@@ -206,8 +205,9 @@
     }
 
     .estadisticas {
-      width: 100%;
+      width: 90%;
       height: auto;
+
 
       .estadisticas-title .text-estadisticas-title {
         font-size: 28px;
@@ -237,7 +237,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 730px) {
     margin: 10px !important;
 
     #results .partido {
@@ -370,6 +370,7 @@
   border: 1px solid $border-color;
   color: white;
 }
+
 @mixin white-box($border-color: black) {
   background-color: white;
   border: 1px solid $border-color;

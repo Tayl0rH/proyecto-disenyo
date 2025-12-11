@@ -106,7 +106,8 @@ body:has(input[type="checkbox"]:checked) {
   body:has(input[type="checkbox"]:checked) .card-text {
     border-color: #AEAEAE;
     background-color: #F5F5F7;
-    color: black; }
+    color: black;
+    text-spacing-trim: 10px; }
   body:has(input[type="checkbox"]:checked) .card-image-title {
     background-color: #F5F5F7; }
 
@@ -123,13 +124,7 @@ body:has(input[type="checkbox"]:not(:checked)) footer {
 header {
   border-bottom: solid 1px;
   border-color: #AEAEAE;
-  display: flex;
-  /*
-    
-    código para un diseño responsive 
-    investigar
-     hola
-    */ }
+  display: flex; }
   @media (max-width: 768px) {
     header {
       flex-direction: column;
@@ -435,7 +430,7 @@ footer {
         font-size: 60px;
         color: #F5F5F7;
         text-align: center; }
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
     #mainMatches {
       grid-template-columns: 1fr 400px; }
       #mainMatches .estadisticas {
@@ -454,7 +449,7 @@ footer {
         #mainMatches .estadisticas .win-rate .text-win-rate,
         #mainMatches .estadisticas .win-rate .porcentaje-win {
           font-size: 45px; } }
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     #mainMatches {
       grid-template-columns: 1fr;
       margin: 20px !important; }
@@ -465,7 +460,7 @@ footer {
           margin-left: 20px !important;
           height: 70px; }
       #mainMatches .estadisticas {
-        width: 100%;
+        width: 90%;
         height: auto; }
         #mainMatches .estadisticas .estadisticas-title .text-estadisticas-title {
           font-size: 28px; }
@@ -483,7 +478,7 @@ footer {
         #mainMatches .estadisticas .win-rate .text-win-rate,
         #mainMatches .estadisticas .win-rate .porcentaje-win {
           font-size: 35px; } }
-  @media (max-width: 600px) {
+  @media (max-width: 730px) {
     #mainMatches {
       margin: 10px !important; }
       #mainMatches #results .partido {
