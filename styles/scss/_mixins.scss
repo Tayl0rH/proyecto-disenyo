@@ -24,10 +24,10 @@
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex;
+    
 
     nav {
-      margin-left: 0 !important;
+      margin-left: 4em !important ;
       gap: 2em;
       flex-wrap: wrap;
       width: 100%;
@@ -49,7 +49,8 @@
 
   @media (max-width: 480px) {
     nav {
-      gap: 1em;
+      margin-left: 2em !important;
+      
     }
 
     div {
@@ -193,7 +194,7 @@
   @media (max-width: 1200px) {
     grid-template-columns: 1fr; // pasar todo a una columna
     margin: 20px !important;
-
+    
     #results {
       grid-auto-rows: auto;
       gap: 30px;
@@ -207,7 +208,7 @@
     .estadisticas {
       width: 90%;
       height: auto;
-
+      margin: 0 auto !important;
 
       .estadisticas-title .text-estadisticas-title {
         font-size: 28px;

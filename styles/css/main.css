@@ -127,10 +127,9 @@ header {
   display: flex; }
   @media (max-width: 768px) {
     header {
-      flex-direction: column;
-      align-items: flex; }
+      flex-direction: column; }
       header nav {
-        margin-left: 0 !important;
+        margin-left: 4em !important;
         gap: 2em;
         flex-wrap: wrap;
         width: 100%;
@@ -143,7 +142,7 @@ header {
           font-size: clamp(1.2rem, 5vw, 1.8rem); } }
   @media (max-width: 480px) {
     header nav {
-      gap: 1em; }
+      margin-left: 2em !important; }
     header div img {
       width: 2em; }
     header div span {
@@ -165,7 +164,7 @@ header {
       display: block; }
   header .header-nav {
     width: 80%;
-    margin-left: 5em !important;
+    margin-left: 5em;
     display: flex;
     align-items: center;
     gap: clamp(2em, 5vw, 8em); }
@@ -461,7 +460,8 @@ footer {
           height: 70px; }
       #mainMatches .estadisticas {
         width: 90%;
-        height: auto; }
+        height: auto;
+        margin: 0 auto !important; }
         #mainMatches .estadisticas .estadisticas-title .text-estadisticas-title {
           font-size: 28px; }
         #mainMatches .estadisticas .partidosjugados .text-partidosJugados {
